@@ -7,9 +7,9 @@ namespace RemoveMatches
     {
         static void Main(string[] args)
         {
-            List<string> randomStrings = new List<string> {"kocho","kocho", "kocho", "kocho", "vasko","kocho","anrejko","vasko"};
-            List<int> duplicatesIndexes = new List<int>();
+            List<string> randomStrings = new List<string> {"kocho","kocho", "kocho", "kocho", "vasko","kocho", "vasko", "anrejko", "vasko", "vasko"};
             PrintList(randomStrings);
+            int duplicatesCounter = 0;
 
             for (int i = 0; i < randomStrings.Count; i++)
             {
@@ -17,20 +17,13 @@ namespace RemoveMatches
                 {
                     if (randomStrings[i]==randomStrings[t])
                     {
-                        if (!duplicatesIndexes.Contains(t))
-                        {
-                            duplicatesIndexes.Add(t);
-                        }
+                        randomStrings[t] = "";
+                        duplicatesCounter++;
                     }
                 }
             }
 
-            for (int i = 0; i < duplicatesIndexes.Count; i++)
-            {
-                randomStrings[duplicatesIndexes[i]] = "";
-            }
-
-            for (int i = 0; i < duplicatesIndexes.Count; i++)
+            for (int i = 0; i < duplicatesCounter; i++)
             {
                 randomStrings.Remove("");
             }
