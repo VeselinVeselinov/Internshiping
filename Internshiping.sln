@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palindrome", "Palindrome\Pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendingWeapon", "ExtendingWeapon\ExtendingWeapon.csproj", "{E39180B1-2885-406B-9249-C7F320B806F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveMatches", "RemoveMatches\RemoveMatches.csproj", "{F690FCF1-92B6-44F2-87B9-F989BA50A26F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoveMatches", "RemoveMatches\RemoveMatches.csproj", "{F690FCF1-92B6-44F2-87B9-F989BA50A26F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmstrongNumbers", "ArmstrongNumbers\ArmstrongNumbers.csproj", "{95891D13-EBFB-4DA4-8C9D-DA6AEFE390CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F690FCF1-92B6-44F2-87B9-F989BA50A26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F690FCF1-92B6-44F2-87B9-F989BA50A26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F690FCF1-92B6-44F2-87B9-F989BA50A26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95891D13-EBFB-4DA4-8C9D-DA6AEFE390CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95891D13-EBFB-4DA4-8C9D-DA6AEFE390CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95891D13-EBFB-4DA4-8C9D-DA6AEFE390CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95891D13-EBFB-4DA4-8C9D-DA6AEFE390CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
