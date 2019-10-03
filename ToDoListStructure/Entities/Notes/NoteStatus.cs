@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Entities.Notes
 {
-    class NoteStatus
+    class NoteStatus:NamedPersistent
     {
     }
 }

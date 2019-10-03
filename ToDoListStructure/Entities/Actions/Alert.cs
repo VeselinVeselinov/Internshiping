@@ -11,6 +11,6 @@ namespace ToDoListStructure.Entities.Actions
 
         public DateTime TimeReminder { get; set; }
 
-        public Status Status { get; set; }
+        public AlertStatus Status { get; set; }
     }
 }

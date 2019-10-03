@@ -6,7 +6,7 @@ namespace ToDoListStructure.Entities.Notes
 {
     class ListNoteItem:NamedPersistent
     {
-        public Status Status { get; set; }
+        public bool Checked { get; set; }
 
         public string Text { get; set; }
     }

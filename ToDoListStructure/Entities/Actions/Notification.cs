@@ -9,5 +9,7 @@ namespace ToDoListStructure.Entities.Actions
         public Alert Alert { get; set; }
 
         public string NotificationMessage { get; set; }
+
+        public NotificationStatus Status { get; set; }
     }
 }

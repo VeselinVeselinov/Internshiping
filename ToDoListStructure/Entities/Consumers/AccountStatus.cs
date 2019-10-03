@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Entities.Consumers
 {
-    class AccountStatus
+    class AccountStatus:NamedPersistent
     {
     }
 }

@@ -14,7 +14,7 @@ namespace ToDoListStructure.Entities.Notes
 
         public Category Category { get; set; }
 
-        public Status Status { get; set; }
+        public NoteStatus Status { get; set; }
 
         public int TextSize { get; set; }
     }

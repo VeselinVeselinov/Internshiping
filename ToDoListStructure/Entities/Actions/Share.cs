@@ -14,6 +14,6 @@ namespace ToDoListStructure.Entities.Actions
 
         public Note Note { get; set; }
 
-        public Status Status { get; set; }
+        public ShareStatus Status { get; set; }
     }
 }

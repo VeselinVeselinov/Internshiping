@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Entities.Actions
 {
-    class NotificationStatus
+    class NotificationStatus:NamedPersistent
     {
     }
 }

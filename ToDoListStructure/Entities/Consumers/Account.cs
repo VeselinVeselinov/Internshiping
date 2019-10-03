@@ -19,6 +19,6 @@ namespace ToDoListStructure.Entities.Consumers
 
         public User User { get; set; }
 
-        public Status Status { get; set; }
+        public AccountStatus Status { get; set; }
     }
 }
