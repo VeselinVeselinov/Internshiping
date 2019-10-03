@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoListStructure.Entities.Notes
+namespace ToDoListStructure.Entities
 {
-    class Category:NamedPersistent
+    class Status:NamedPersistent
     {
-        
+
     }
 }

@@ -6,6 +6,6 @@ namespace ToDoListStructure.Entities.Notes
 {
     class TextNote:Note
     {
-        public string NoteContent { get; set; }
+        public string Content { get; set; }
     }
 }

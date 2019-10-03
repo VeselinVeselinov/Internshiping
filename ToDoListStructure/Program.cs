@@ -1,4 +1,7 @@
 ﻿using System;
+using ToDoListStructure.Entities.Notes;
+using ToDoListStructure.Entities.Actions;
+using ToDoListStructure.Entities.Consumers;
 
 namespace ToDoListStructure
 {
@@ -6,7 +9,11 @@ namespace ToDoListStructure
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ImageNote image = new ImageNote();
+            Share spodelqnka = new Share();
+            spodelqnka.Note = image;
+            Console.WriteLine(typeof(Share));
+            
         }
     }
 }

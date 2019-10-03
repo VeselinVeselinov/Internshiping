@@ -6,6 +6,6 @@ namespace ToDoListStructure.Entities.Notes
 {
     class ListNote:Note
     {
-        public List<ListNoteItem> NoteContent { get; set; }
+        public List<ListNoteItem> Content { get; set; }
     }
 }
