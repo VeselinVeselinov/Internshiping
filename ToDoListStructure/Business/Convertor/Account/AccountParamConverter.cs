@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.Account
 {
-    class AccountParamConverter
+    class AccountParamConverter:IAccountParamConverter
     {
     }
 }

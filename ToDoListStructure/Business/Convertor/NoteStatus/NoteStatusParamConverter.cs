@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.NoteStatus
 {
-    class NoteStatusParamConverter
+    class NoteStatusParamConverter:INoteStatusParamConverter
     {
     }
 }

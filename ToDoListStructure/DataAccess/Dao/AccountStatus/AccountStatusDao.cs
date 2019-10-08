@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.DataAccess.Dao.AccountStatus
 {
-    class AccountStatusDao
+    class AccountStatusDao:IAccountStatusDao
     {
     }
 }

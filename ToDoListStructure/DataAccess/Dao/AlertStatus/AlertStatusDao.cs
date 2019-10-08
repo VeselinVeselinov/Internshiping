@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.DataAccess.Dao.AlertStatus
 {
-    class AlertStatusDao
+    class AlertStatusDao:IAlertStatusDao
     {
     }
 }

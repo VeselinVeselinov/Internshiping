@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Presentation.Service.ShareStatus
 {
-    class ShareStatusService
+    class ShareStatusService:IShareStatusService
     {
     }
 }

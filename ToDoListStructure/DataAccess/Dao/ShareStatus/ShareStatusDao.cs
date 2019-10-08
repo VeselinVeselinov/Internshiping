@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.DataAccess.Dao.ShareStatus
 {
-    class ShareStatusDao
+    class ShareStatusDao:IShareStatusDao
     {
     }
 }

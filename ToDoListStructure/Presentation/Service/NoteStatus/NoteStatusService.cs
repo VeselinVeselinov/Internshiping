@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Presentation.Service.NoteStatus
 {
-    class NoteStatusService
+    class NoteStatusService:INoteStatusService
     {
     }
 }

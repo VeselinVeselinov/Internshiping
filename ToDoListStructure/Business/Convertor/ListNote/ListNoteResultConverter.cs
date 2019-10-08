@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.ListNote
 {
-    class ListNoteResultConverter
+    class ListNoteResultConverter:IListNoteResultConverter
     {
     }
 }

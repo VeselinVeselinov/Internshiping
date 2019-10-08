@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Processor.NoteStatus
 {
-    class NoteStatusProcessor
+    class NoteStatusProcessor:INoteStatusProcessor
     {
     }
 }

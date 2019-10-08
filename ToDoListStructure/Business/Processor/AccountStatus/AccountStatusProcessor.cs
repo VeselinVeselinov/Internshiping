@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Processor.AccountStatus
 {
-    class AccountStatusProcessor
+    class AccountStatusProcessor:IAccountStatusProcessor
     {
     }
 }

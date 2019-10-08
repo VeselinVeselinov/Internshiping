@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.AccountStatus
 {
-    class AccountStausParamConverter
+    class AccountStausParamConverter:IAccountStatusParamConverter
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Processor.AlertStatus
 {
-    class AlertStatusProcessor
+    class AlertStatusProcessor:IAlertStatusProcessor
     {
     }
 }

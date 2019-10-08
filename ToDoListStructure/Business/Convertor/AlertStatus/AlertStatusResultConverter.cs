@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.AlertStatus
 {
-    class AlertStatusResultConverter
+    class AlertStatusResultConverter:IAlertStatusResultConverter
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Processor.ListNoteItem
 {
-    class ListNoteItemProcessor
+    class ListNoteItemProcessor:IListNoteItemProcessor
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Presentation.Service.AccountStatus
 {
-    class AccountStatusService
+    class AccountStatusService:IAccountStatusService
     {
     }
 }

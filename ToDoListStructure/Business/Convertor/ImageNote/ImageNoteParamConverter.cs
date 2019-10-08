@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.ImageNote
 {
-    class ImageNoteParamConverter
+    class ImageNoteParamConverter:IImageNoteParamConverter
     {
     }
 }

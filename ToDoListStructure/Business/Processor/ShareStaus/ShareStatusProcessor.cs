@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Processor.ShareStaus
 {
-    class ShareStatusProcessor
+    class ShareStatusProcessor:IShareStatusProcessor
     {
     }
 }
