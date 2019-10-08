@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoListStructure.Entities.Notes;
 
-namespace ToDoListStructure.Entities.Consumers
+
+namespace ToDoListStructure.Entities
 {
     class Account:NamedPersistent
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoListStructure.Entities.Consumers
+namespace ToDoListStructure.Entities
 {
     class AccountStatus:NamedPersistent
     {

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoListStructure.Entities.Consumers;
-using ToDoListStructure.Entities.Notes;
 
-namespace ToDoListStructure.Entities.Actions
+
+namespace ToDoListStructure.Entities
 {
     class Share:Persistent
     {
