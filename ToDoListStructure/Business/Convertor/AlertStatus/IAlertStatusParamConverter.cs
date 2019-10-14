@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.AlertStatus
 {
     interface IAlertStatusParamConverter
     {
+        ToDoListStructure.Entities.AlertStatus Convert(AlertStatusParam param);
     }
 }

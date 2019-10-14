@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.Share
 {
     interface IShareResultConverter
     {
+        ShareResult Convert(ToDoListStructure.Entities.Share param);
     }
 }

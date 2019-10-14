@@ -1,4 +1,4 @@
-﻿\using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.Notification
 {
     interface INotificationParamConverter
     {
+        ToDoListStructure.Entities.Notification Convert(NotificationParam param);
     }
 }

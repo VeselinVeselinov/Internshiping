@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.ListNote
 {
     interface IListNoteResultConverter
     {
+        ListNoteResult Convert(ToDoListStructure.Entities.ListNote param);
     }
 }
