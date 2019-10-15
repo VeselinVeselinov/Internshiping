@@ -13,7 +13,7 @@ namespace ToDoListStructure.Business.Convertor.Account
 
         public Entities.Account Convert(AccountParam param)
         {
-            return JsonConvert.DeserializeObject<Entities.Account>(param.jsonInput);
+            return JsonConvert.DeserializeObject<Entities.Account>(param.Input);
         }
     }
 }

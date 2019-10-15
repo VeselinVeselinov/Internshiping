@@ -18,8 +18,7 @@ namespace ToDoListStructure.Business.Processor.Account
         public AccountResult Create(AccountParam param)
         {
             ToDoListStructure.Entities.Account entity = ParamConverter.Convert(param);
-            Console.WriteLine(entity.FirstName);
-            Dao.Save(entity);
+            //Dao.Save(entity); 
             return ResultConverter.Convert(entity);
         }
 

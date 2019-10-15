@@ -10,8 +10,7 @@ namespace ToDoListStructure.Business.Convertor.Account
     {
         public AccountResult Convert(Entities.Account param)
         {
-            string converted= JsonConvert.SerializeObject(param);
-            AccountResult result = new AccountResult() {result=converted};
+            AccountResult result = new AccountResult() { Converted = JsonConvert.SerializeObject(param) };
             return result;
         }
     }
