@@ -1,7 +1,8 @@
 ﻿using System;
-using ToDoListStructure.Entities.Notes;
-using ToDoListStructure.Entities.Actions;
-using ToDoListStructure.Entities.Consumers;
+using ToDoListStructure.Business.Convertor.Account;
+using ToDoListStructure.Entities;
+using ToDoListStructure.Presentation.Service.Account;
+using Newtonsoft.Json;
 
 namespace ToDoListStructure
 {
@@ -9,16 +10,12 @@ namespace ToDoListStructure
     {
         static void Main(string[] args)
         {
-            Account Vesko = new Account();
-            Account Vasko = new Account();
-            TextNote Note1 = new TextNote();
-            Note1.Content = "Today i will order pizza";
-            Console.WriteLine(Note1.Content);
-
-            Share spodelqnka = new Share();
+            Account account = new Account() { FirstName="nqma"};
+            string input = JsonConvert.SerializeObject(account);
+            AccountService accountService = new AccountService();
+            AccountParam param = new AccountParam() { jsonInput = input };
             
-
-            Console.WriteLine();
+            Console.WriteLine(accountService.Create(param).Text);
             
         }
     }

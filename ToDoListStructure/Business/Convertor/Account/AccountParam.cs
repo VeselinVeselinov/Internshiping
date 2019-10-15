@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.Account
 {
     class AccountParam
     {
+        public string jsonInput { get; set; }
     }
 }

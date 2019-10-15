@@ -13,5 +13,45 @@ namespace ToDoListStructure.Business.Processor.TextNote
         public TextNoteParamConverter ParamConverter { get; set; }
 
         public TextNoteResultConverter ResultConverter { get; set; }
+
+        public TextNoteResult Create(TextNoteParam param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<TextNoteResult> Create(List<TextNoteParam> param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(List<long> idList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TextNoteResult Find(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<TextNoteResult> Find()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(long id, TextNoteParam param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(List<TextNoteParam> param)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

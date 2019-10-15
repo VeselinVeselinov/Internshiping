@@ -13,5 +13,45 @@ namespace ToDoListStructure.Business.Processor.Notification
         public NotificationParamConverter ParamConverter { get; set; }
 
         public NotificationResultConverter ResultConverter { get; set; }
+
+        public NotificationResult Create(NotificationParam param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<NotificationResult> Create(List<NotificationParam> param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(List<long> idList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public NotificationResult Find(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<NotificationResult> Find()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(long id, NotificationParam param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(List<NotificationParam> param)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

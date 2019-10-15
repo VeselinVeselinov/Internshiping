@@ -13,5 +13,45 @@ namespace ToDoListStructure.Business.Processor.ListNoteItem
         public ListNoteItemParamConverter ParamConverter { get; set; }
 
         public ListNoteItemResultConverter ResultConverter { get; set; }
+
+        public ListNoteItemResult Create(ListNoteItemParam param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ListNoteItemResult> Create(List<ListNoteItemParam> param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(List<long> idList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ListNoteItemResult Find(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ListNoteItemResult> Find()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(long id, ListNoteItemParam param)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(List<ListNoteItemParam> param)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
