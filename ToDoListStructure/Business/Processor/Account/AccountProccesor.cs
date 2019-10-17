@@ -17,24 +17,37 @@ namespace ToDoListStructure.Business.Processor.Account
 
         public AccountResult Create(AccountParam param)
         {
-            ToDoListStructure.Entities.Account entity = ParamConverter.Convert(param);
-            //Dao.Save(entity); 
+            Entities.Account entity = ParamConverter.Convert(param);
+            entity=Dao.Save(entity); 
             return ResultConverter.Convert(entity);
         }
 
         public List<AccountResult> Create(List<AccountParam> param)
         {
-            throw new NotImplementedException();
+            List<Entities.Account> entities = new List<Entities.Account>();
+            foreach (var item in param)
+            {
+                entities.Add(ParamConverter.Convert(item));
+            }
+            Dao.Save(entities);
+            List<AccountResult> result = new List<AccountResult>();
+            foreach(var item in entities)
+            {
+                result.Add(ResultConverter.Convert(item));
+            }
+            return result;
         }
 
         public void Delete(long id)
         {
-            throw new NotImplementedException();
+            Dao.Delete(id);
         }
 
         public void Delete(List<long> idList)
         {
-            throw new NotImplementedException();
+            // chrez param converter poluchavame list ot entities.account i gi podavame na delete(list ot entities)
+
+            Dao.Delete(idList);
         }
 
         public AccountResult Find(long id)
@@ -44,11 +57,19 @@ namespace ToDoListStructure.Business.Processor.Account
 
         public List<AccountResult> Find()
         {
-            throw new NotImplementedException();
+            List<Entities.Account> accounts = Dao.Find();
+            List<AccountResult> results = new List<AccountResult>();
+            foreach (var item in accounts)
+            {
+                results.Add(ResultConverter.Convert(item));
+            }
+            return results;
+
         }
 
         public void Update(long id, AccountParam param)
         {
+            //Dao.Update();
             throw new NotImplementedException();
         }
 

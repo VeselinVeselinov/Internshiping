@@ -9,37 +9,43 @@ namespace ToDoListStructure.DataAccess.Dao.Account
     {
         public void Delete(long id)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Entity with this {id} has been deleted.");
         }
 
         public void Delete(Entities.Account entity)
         {
-            throw new NotImplementedException();
+            Delete(Find(entity.ID));
         }
 
         public void Delete(List<Entities.Account> entity)
         {
-            throw new NotImplementedException();
+            foreach (var item in entity)
+            {
+                Delete(item);
+            }
         }
 
         public Entities.Account Find(long id)
         {
-            throw new NotImplementedException();
+            // where acc.id=id
+            Entities.Account wanted = new Entities.Account() { ID = id};
+            return wanted;
         }
 
         public List<Entities.Account> Find()
         {
-            throw new NotImplementedException();
+            List<Entities.Account> all = new List<Entities.Account>();
+            return all;
         }
 
         public Entities.Account Save(Entities.Account entity)
         {
-            throw new NotImplementedException();
+            return entity;
         }
 
         public List<Entities.Account> Save(List<Entities.Account> entity)
         {
-            throw new NotImplementedException();
+            return entity;
         }
 
         public Entities.Account Update(Entities.Account entity)

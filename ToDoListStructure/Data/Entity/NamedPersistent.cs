@@ -6,10 +6,10 @@ namespace ToDoListStructure.Entities
 {
     class NamedPersistent : Persistent
     {
-        protected int Code { get; set; }
+        public int Code { get; set; }
 
-        protected string Name { get; set; }
+        public string Name { get; set; }
 
-        protected string Description { get; set; }
+        public string Description { get; set; }
     }
 }

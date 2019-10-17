@@ -10,7 +10,20 @@ namespace ToDoListStructure.Business.Convertor.Account
     {
         public AccountResult Convert(Entities.Account param)
         {
-            AccountResult result = new AccountResult() { Converted = JsonConvert.SerializeObject(param) };
+            AccountResult result = new AccountResult()
+            {
+                Id = param.ID,
+                Code = param.Code,
+                Name = param.Name,
+                Description = param.Description,
+                FirstName = param.FirstName,
+                LastName = param.LastName,
+                Address = param.Address,
+                Phone = param.Phone,
+                Email = param.Email,
+                User = param.User,
+                Status = param.Status
+            };
             return result;
         }
     }

@@ -13,19 +13,21 @@ namespace ToDoListStructure.Presentation.Service.Account
 
         public Response Create(AccountParam param)
         {
-            Processor.Create(param);
-            Response response = new Response() { Text= Processor.Create(param).Converted };
+            Response response = new Response() { Text = ToDoListStructure.Presentation.JsonConverter.JsonConverter.ObjToJson(Processor.Create(param)), Result = true };
             return response;
         }
 
         public Response Create(List<AccountParam> param)
         {
-            throw new NotImplementedException();
+            Response response = new Response() { Text = ToDoListStructure.Presentation.JsonConverter.JsonConverter.ObjToJson(Processor.Create(param)), Result = true };
+            return response;
         }
 
         public Response DeleteByID(long id)
         {
-            throw new NotImplementedException();
+
+            Response response = new Response() { Text = "Done.", Result = true };
+            return response;
         }
 
         public Response Delte(List<long> idList)
@@ -40,7 +42,7 @@ namespace ToDoListStructure.Presentation.Service.Account
 
         public Response ListAll()
         {
-            throw new NotImplementedException();
+            Processor.Find();
         }
 
         public Response Update(long id, AccountParam param)
