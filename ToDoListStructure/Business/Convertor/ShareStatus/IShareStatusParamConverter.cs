@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.ShareStatus
 {
     interface IShareStatusParamConverter
     {
+        ToDoListStructure.Entities.ShareStatus Convert(ShareStatusParam param);
     }
 }

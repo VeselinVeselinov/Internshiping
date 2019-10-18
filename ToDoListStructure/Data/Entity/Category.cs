@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoListStructure.Entities.Actions
+namespace ToDoListStructure.Entities
 {
-    class AlertStatus:NamedPersistent
+    class Category:NamedPersistent
     {
+        
     }
 }

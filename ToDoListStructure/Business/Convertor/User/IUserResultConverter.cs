@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.User
 {
     interface IUserResultConverter
     {
+        UserResult Convert(ToDoListStructure.Entities.User param);
     }
 }

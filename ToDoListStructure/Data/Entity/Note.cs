@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
-using ToDoListStructure.Entities.Consumers;
 
-namespace ToDoListStructure.Entities.Notes
+
+namespace ToDoListStructure.Entities
 {
     abstract class Note:NamedPersistent
     {

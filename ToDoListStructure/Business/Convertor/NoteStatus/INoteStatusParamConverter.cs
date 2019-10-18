@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.NoteStatus
 {
     interface INoteStatusParamConverter
     {
+        ToDoListStructure.Entities.NoteStatus Convert(NoteStatusParam param);
     }
 }

@@ -4,8 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Entities
 {
-    class Persistent
+    class AlertStatus:NamedPersistent
     {
-        protected int ID { get; set; }
     }
 }

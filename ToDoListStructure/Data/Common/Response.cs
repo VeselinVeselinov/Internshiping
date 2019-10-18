@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoListStructure.Entities.Notes
+namespace ToDoListStructure.Data.Common
 {
-    class ListNoteItem:NamedPersistent
+    class Response
     {
-        public bool Checked { get; set; }
-
         public string Text { get; set; }
+
+        public bool Result { get; set; }
     }
 }

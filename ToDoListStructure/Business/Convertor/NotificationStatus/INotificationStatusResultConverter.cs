@@ -6,5 +6,6 @@ namespace ToDoListStructure.Business.Convertor.NotificationStatus
 {
     interface INotificationStatusResultConverter
     {
+        NotificationStatusResult Convert(ToDoListStructure.Entities.NotificationStatus param);
     }
 }
