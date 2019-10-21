@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.UserStatus
 {
     class UserStatusProcessor:IUserStatusProcessor
     {
-        public UserStatusDao Dao { get; set; }
+        public IUserStatusDao Dao { get; set; }
 
-        public UserStatusParamConverter ParamConverter { get; set; }
+        public IUserStatusParamConverter ParamConverter { get; set; }
 
-        public UserStatusResultConverter ResultConverter { get; set; }
+        public IUserStatusResultConverter ResultConverter { get; set; }
 
         public UserStatusResult Create(UserStatusParam param)
         {

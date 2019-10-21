@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.ListNote
 {
     class ListNoteService:IListNoteService
     {
-        public ListNoteProcessor Processor { get; set; }
+        public IListNoteProcessor Processor { get; set; }
 
         public Response Create(ListNoteParam param)
         {

@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.ImageNote
 {
     class ImageNoteService:IImageNoteService
     {
-        public ImageNoteProcessor Processor { get; set; }
+        public IImageNoteProcessor Processor { get; set; }
 
         public Response Create(ImageNoteParam param)
         {

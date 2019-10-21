@@ -8,7 +8,7 @@ namespace ToDoListStructure.Business.Convertor.ShareStatus
 {
     class ShareStatusParamConverter:IShareStatusParamConverter
     {
-        public ShareStatusDao Dao { get; set; }
+        public IShareStatusDao Dao { get; set; }
 
         public Entities.ShareStatus Convert(ShareStatusParam param)
         {

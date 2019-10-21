@@ -8,7 +8,7 @@ namespace ToDoListStructure.Business.Convertor.TextNote
 {
     class TextNoteParamConverter:ITextNoteParamConverter
     {
-        public TextNoteDao Dao { get; set; }
+        public ITextNoteDao Dao { get; set; }
 
         public Entities.TextNote Convert(TextNoteParam param)
         {

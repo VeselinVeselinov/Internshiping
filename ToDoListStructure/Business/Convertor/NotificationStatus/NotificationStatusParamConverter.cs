@@ -8,7 +8,7 @@ namespace ToDoListStructure.Business.Convertor.NotificationStatus
 {
     class NotificationStatusParamConverter:INotificationStatusParamConverter
     {
-        public NotificationStatusDao Dao { get; set; }
+        public INotificationStatusDao Dao { get; set; }
 
         public Entities.NotificationStatus Convert(NotificationStatusParam param)
         {

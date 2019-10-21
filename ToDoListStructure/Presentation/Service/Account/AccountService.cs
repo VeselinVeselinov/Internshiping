@@ -12,7 +12,7 @@ namespace ToDoListStructure.Presentation.Service.Account
     {
         public Response Response { get; set; }
 
-        public AccountProccesor Processor { get; set; }
+        public IAccountProcessor Processor { get; set; }
 
         public Response Create(AccountParam param)
         {

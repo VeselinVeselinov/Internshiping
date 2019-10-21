@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.AccountStatus
 {
     class AccountStatusService:IAccountStatusService
     {
-        public AccountStatusProcessor Processor { get; set; }
+        public IAccountStatusProcessor Processor { get; set; }
 
         public Response Create(AccountStatusParam param)
         {

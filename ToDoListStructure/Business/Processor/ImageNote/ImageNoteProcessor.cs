@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.ImageNote
 {
     class ImageNoteProcessor:IImageNoteProcessor
     {
-        public ImageNoteDao Dao { get; set; }
+        public IImageNoteDao Dao { get; set; }
 
-        public ImageNoteParamConverter ParamConverter { get; set; }
+        public IImageNoteParamConverter ParamConverter { get; set; }
 
-        public ImageNoteResultConverter ResultConverter { get; set; }
+        public IImageNoteResultConverter ResultConverter { get; set; }
 
         public ImageNoteResult Create(ImageNoteParam param)
         {

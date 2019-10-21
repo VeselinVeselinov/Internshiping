@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.NoteStatus
 {
     class NoteStatusService:INoteStatusService
     {
-        public NoteStatusProcessor Processor { get; set; }
+        public INoteStatusProcessor Processor { get; set; }
 
         public Response Create(NoteStatusParam param)
         {

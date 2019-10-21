@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.AccountStatus
 {
     class AccountStatusProcessor:IAccountStatusProcessor
     {
-        public AccountStatusDao Dao { get; set; }
+        public IAccountStatusDao Dao { get; set; }
 
-        public AccountStausParamConverter ParamConverter { get; set; }
+        public IAccountStatusParamConverter ParamConverter { get; set; }
 
-        public AccountStatusResultConverter ResultConverter { get; set; }
+        public IAccountStatusResultConverter ResultConverter { get; set; }
 
         public AccountStatusResult Create(AccountStatusParam param)
         {

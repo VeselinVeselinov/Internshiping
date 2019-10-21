@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.ListNote
 {
     class ListNoteProcessor:IListNoteProcessor
     {
-        public ListNoteDao Dao { get; set; }
+        public IListNoteDao Dao { get; set; }
 
-        public ListNoteParamConverter ParamConverter { get; set; }
+        public IListNoteParamConverter ParamConverter { get; set; }
 
-        public ListNoteResultConverter ResultConverter { get; set; }
+        public IListNoteResultConverter ResultConverter { get; set; }
 
         public ListNoteResult Create(ListNoteParam param)
         {

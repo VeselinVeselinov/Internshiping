@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.DataAccess.Dao.Notification
 {
-    interface NotificationDao:INotificationDeo
+    interface INotificationDao:INotificationDeo
     {
     }
 }

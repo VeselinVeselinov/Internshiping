@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.ShareStaus
 {
     class ShareStatusProcessor:IShareStatusProcessor
     {
-        public ShareStatusDao Dao { get; set; }
+        public IShareStatusDao Dao { get; set; }
 
-        public ShareStatusParamConverter ParamConverter { get; set; }
+        public IShareStatusParamConverter ParamConverter { get; set; }
 
-        public ShareStatusResultConverter ResultConverter { get; set; }
+        public IShareStatusResultConverter ResultConverter { get; set; }
 
         public ShareStatusResult Create(ShareStatusParam param)
         {

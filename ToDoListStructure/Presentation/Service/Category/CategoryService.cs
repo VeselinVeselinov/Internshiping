@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.Category
 {
     class CategoryService:ICategoryService
     {
-        public CategoryProcessor Processor { get; set; }
+        public ICategoryProcessor Processor { get; set; }
 
         public Response Create(CategoryParam param)
         {

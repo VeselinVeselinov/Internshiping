@@ -8,7 +8,7 @@ namespace ToDoListStructure.Business.Convertor.UserStatus
 {
     class UserStatusParamConverter:IUserStatusParamConverter
     {
-        public UserStatusDao Dao { get; set; }
+        public IUserStatusDao Dao { get; set; }
 
         public Entities.UserStatus Convert(UserStatusParam param)
         {

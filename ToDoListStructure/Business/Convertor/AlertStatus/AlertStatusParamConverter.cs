@@ -8,7 +8,7 @@ namespace ToDoListStructure.Business.Convertor.AlertStatus
 {
     class AlertStatusParamConverter:IAlertStatusParamConverter
     {
-        public AlertStatusDao Dao { get; set; }
+        public IAlertStatusDao Dao { get; set; }
 
         public Entities.AlertStatus Convert(AlertStatusParam param)
         {

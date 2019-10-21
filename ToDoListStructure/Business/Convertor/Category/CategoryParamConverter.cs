@@ -8,7 +8,7 @@ namespace ToDoListStructure.Business.Convertor.Category
 {
     class CategoryParamConverter:ICategoryParamConverter
     {
-        public CategoryDao Dao { get; set; }
+        public ICategoryDao Dao { get; set; }
 
         public Entities.Category Convert(CategoryParam param)
         {

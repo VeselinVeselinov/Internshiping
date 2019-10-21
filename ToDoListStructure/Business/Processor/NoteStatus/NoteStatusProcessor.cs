@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.NoteStatus
 {
     class NoteStatusProcessor:INoteStatusProcessor
     {
-        public NoteStatusDao Dao { get; set; }
+        public INoteStatusDao Dao { get; set; }
 
-        public NoteStatusParamConverter ParamConverter { get; set; }
+        public INoteStatusParamConverter ParamConverter { get; set; }
 
-        public NoteStatusResultConverter ResultConverter { get; set; }
+        public INoteStatusResultConverter ResultConverter { get; set; }
 
         public NoteStatusResult Create(NoteStatusParam param)
         {

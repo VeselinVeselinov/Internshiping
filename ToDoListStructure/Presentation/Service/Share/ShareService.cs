@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.Share
 {
     class ShareService:IShareService
     {
-        public ShareProcessor Processor { get; set; }
+        public IShareProcessor Processor { get; set; }
 
         public Response Create(ShareParam param)
         {

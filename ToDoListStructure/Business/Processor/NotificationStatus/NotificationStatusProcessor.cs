@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.NotificationStatus
 {
     class NotificationStatusProcessor:INotificationStatusProcessor
     {
-        public NotificationStatusDao Dao { get; set; }
+        public INotificationStatusDao Dao { get; set; }
 
-        public NotificationStatusParamConverter ParamConverter { get; set; }
+        public INotificationStatusParamConverter ParamConverter { get; set; }
 
-        public NotificationStatusResultConverter ResultConverter { get; set; }
+        public INotificationStatusResultConverter ResultConverter { get; set; }
 
         public NotificationStatusResult Create(NotificationStatusParam param)
         {

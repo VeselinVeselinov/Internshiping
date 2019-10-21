@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.Notification
 {
     class NotificationService:INotificationService
     {
-        public NotificationProcessor Processor { get; set; }
+        public INotificationProcessor Processor { get; set; }
 
         public Response Create(NotificationParam param)
         {

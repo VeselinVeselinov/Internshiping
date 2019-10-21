@@ -5,7 +5,7 @@ using ToDoListStructure.Entities;
 
 namespace ToDoListStructure.DataAccess.Dao.NoteStatus
 {
-    class NoteStatusDao : INoteStausDao
+    class INoteStatusDao : INoteStausDao
     {
         public void Delete(long id)
         {

@@ -8,7 +8,7 @@ namespace ToDoListStructure.Business.Convertor.ListNoteItem
 {
     class ListNoteItemParamConverter:IListNoteItemParamConverter
     {
-        public ListNoteItemDao Dao { get; set; }
+        public IListNoteItemDao Dao { get; set; }
 
         public Entities.ListNoteItem Convert(ListNoteItemParam param)
         {

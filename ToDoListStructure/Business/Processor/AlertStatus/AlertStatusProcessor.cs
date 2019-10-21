@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.AlertStatus
 {
     class AlertStatusProcessor:IAlertStatusProcessor
     {
-        public AlertStatusDao Dao { get; set; }
+        public IAlertStatusDao Dao { get; set; }
 
-        public AlertStatusParamConverter ParamConverter { get; set; }
+        public IAlertStatusParamConverter ParamConverter { get; set; }
 
-        public AlertStatusResultConverter ResultConverter { get; set; }
+        public IAlertStatusResultConverter ResultConverter { get; set; }
 
         public AlertStatusResult Create(AlertStatusParam param)
         {

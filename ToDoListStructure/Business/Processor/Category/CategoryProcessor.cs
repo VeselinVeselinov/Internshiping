@@ -8,11 +8,11 @@ namespace ToDoListStructure.Business.Processor.Category
 {
     class CategoryProcessor:ICategoryProcessor
     {
-        public CategoryDao Dao { get; set; }
+        public ICategoryDao Dao { get; set; }
 
-        public CategoryParamConverter ParamConverter { get; set; }
+        public ICategoryParamConverter ParamConverter { get; set; }
 
-        public CategoryResultConverter ResultConverter { get; set; }
+        public ICategoryResultConverter ResultConverter { get; set; }
 
         public CategoryResult Create(CategoryParam param)
         {

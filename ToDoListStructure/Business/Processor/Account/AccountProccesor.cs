@@ -9,11 +9,11 @@ namespace ToDoListStructure.Business.Processor.Account
 {
     class AccountProccesor:IAccountProcessor
     {
-        public AccountDao Dao { get; set; }
+        public IAccountDao Dao { get; set; }
 
-        public AccountResultConverter ResultConverter { get; set; }
+        public IAccountResultConverter ResultConverter { get; set; }
 
-        public AccountParamConverter ParamConverter { get; set; }
+        public IAccountParamConverter ParamConverter { get; set; }
 
         public AccountResult Create(AccountParam param)
         {
@@ -45,7 +45,7 @@ namespace ToDoListStructure.Business.Processor.Account
             List<Entities.Account> entity = new List<Entities.Account>();
             foreach (var id in idList)
             {
-                entity.Add(ParamConverter.Dao.Find(id));
+                entity.Add(Dao.Find(id));
             }
             Dao.Delete(entity);
 

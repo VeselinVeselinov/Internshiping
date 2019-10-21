@@ -9,7 +9,7 @@ namespace ToDoListStructure.Business.Convertor.AccountStatus
 {
     class AccountStausParamConverter:IAccountStatusParamConverter
     {
-        public AccountStatusDao Dao { get; set; }
+        public IAccountStatusDao Dao { get; set; }
 
         public Entities.Account Convert(AccountParam param)
         {

@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.User
 {
     class UserService:IUserService
     {
-        public UserProcessor Processor { get; set; }
+        public IUserProcessor Processor { get; set; }
 
         public Response Create(UserParam param)
         {

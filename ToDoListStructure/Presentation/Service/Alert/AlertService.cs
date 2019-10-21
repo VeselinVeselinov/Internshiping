@@ -9,7 +9,7 @@ namespace ToDoListStructure.Presentation.Service.Alert
 {
     class AlertService:IAlertService
     {
-        public AlertProcessor Processor { get; set; }
+        public IAlertProcessor Processor { get; set; }
 
         public Response Create(AlertParam param)
         {
