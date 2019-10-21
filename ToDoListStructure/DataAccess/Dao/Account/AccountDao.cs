@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using ToDoListStructure.Entities;
 
@@ -9,53 +10,54 @@ namespace ToDoListStructure.DataAccess.Dao.Account
     {
         public void Delete(long id)
         {
-            Console.WriteLine($"Entity with this {id} has been deleted.");
+            Entities.Account entity = Find(id);
+            Delete(entity);
         }
 
         public void Delete(Entities.Account entity)
         {
-            Delete(Find(entity.ID));
+            AccountStorage.Storage.Remove(entity);
         }
 
         public void Delete(List<Entities.Account> entity)
         {
-            foreach (var item in entity)
-            {
-                Delete(item);
-            }
+            entity.ForEach(x=>Delete(x));
         }
 
         public Entities.Account Find(long id)
         {
-            // where acc.id=id
-            Entities.Account wanted = new Entities.Account() { ID = id};
-            return wanted;
+            return AccountStorage.Storage
+                .Where(x => x.ID.Equals(id))
+                .Single();
         }
 
         public List<Entities.Account> Find()
         {
-            List<Entities.Account> all = new List<Entities.Account>();
-            return all;
+            return AccountStorage.Storage;
         }
 
         public Entities.Account Save(Entities.Account entity)
         {
+            AccountStorage.Storage.Add(entity);
             return entity;
         }
 
         public List<Entities.Account> Save(List<Entities.Account> entity)
         {
+            entity.ForEach(x=>AccountStorage.Storage.Add(x));
             return entity;
         }
 
         public Entities.Account Update(Entities.Account entity)
         {
-            throw new NotImplementedException();
+            //find convert delete and save ?
+            return entity;
         }
 
         public List<Entities.Account> Update(List<Entities.Account> entity)
         {
-            throw new NotImplementedException();
+            entity.ForEach(x=>Update(x));
+            return entity;
         }
     }
 }

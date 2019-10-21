@@ -14,25 +14,20 @@ namespace ToDoListStructure
     {
         static void Main(string[] args)
         {
-            AccountParam param = new AccountParam();
-            AccountParam param1 = new AccountParam();
+            //string[] questions = new string[] 
+            //{
+            //    "Please enter your accoun's ID:",
+            //    "Enter your account's code",
+            //    "Enter your account's name",
+            //    "Enter your account's description",
+            //    "Enter your first name",
+            //    "Enter your last name",
+            //    "Enter your address",
+            //    "Enter your phone",
+            //    "Enter your email"
+            //};
 
-            string[] questions = new string[] 
-            {
-                "Please enter your accoun's ID:",
-                "Enter your account's code",
-                "Enter your account's name",
-                "Enter your account's description",
-                "Enter your first name",
-                "Enter your last name",
-                "Enter your address",
-                "Enter your phone",
-                "Enter your email"
-            };
-            
-            GetParamInput(param,questions);
-            GetParamInput(param1,questions);
-            List<AccountParam> @params = new List<AccountParam>() {param,param1};
+            AccountParam account = new AccountParam() { Id = 1, Code = 15, Name="Toshko", Description="student account for me",FirstName="Teodor",LastName="Kukata"};
 
             AccountDao dao = new AccountDao();
             AccountParamConverter paramConverter = new AccountParamConverter() { Dao = dao };
@@ -43,10 +38,24 @@ namespace ToDoListStructure
                 ParamConverter = paramConverter,
                 ResultConverter = resultConverter
             };
-            AccountService service = new AccountService() {Processor=proccesor};
 
-            Response response = service.Create(@params);
-            Console.WriteLine(response.Text);
+            AccountService service = new AccountService() {Processor=proccesor, Response= new Response()};
+            service.Create(account);
+            Console.WriteLine(service.Response.Text);
+
+            service.FindByPK(1);
+            Console.WriteLine(service.Response.Text);
+
+            service.DeleteByID(1);
+            Console.WriteLine(service.Response.Text);
+
+            service.ListAll();
+            Console.WriteLine(service.Response.Text);
+
+
+            service.FindByPK(1);
+            Console.WriteLine(service.Response.Text);
+
         }
 
         static void GetParamInput(AccountParam param, string [] questions)
