@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.Category
 {
-    class CategoryParam
+    class CategoryParam:BaseParamNamed
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.UserStatus
 {
-    class UserStatusParam
+    class UserStatusParam:BaseParamNamed
     {
     }
 }

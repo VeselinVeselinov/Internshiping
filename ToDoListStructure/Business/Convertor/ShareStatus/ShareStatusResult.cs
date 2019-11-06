@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.ShareStatus
 {
-    class ShareStatusResult
+    class ShareStatusResult:BaseResultNamed
     {
     }
 }

@@ -6,5 +6,11 @@ namespace ToDoListStructure.Business.Convertor.Category
 {
     interface ICategoryParamConverter
     {
+<<<<<<< Updated upstream
+=======
+        ToDoListStructure.Entities.Category Convert(CategoryParam param);
+
+        Entities.Category Convert(CategoryParam param, Entities.Category oldEntity);
+>>>>>>> Stashed changes
     }
 }
