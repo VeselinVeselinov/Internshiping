@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.ImageNote;
+using ToDoListStructure.Data.Common;
 
 namespace ToDoListStructure.Presentation.Service.ImageNote
 {
     interface IImageNoteService
     {
-<<<<<<< Updated upstream
-=======
         Response FindByPK(long id);
 
         Response ListAll();
-
-        Response FindByCode(string code);
-
-        Response FindByName(string name);
 
         Response Create(ImageNoteParam param);
 
@@ -31,6 +27,5 @@ namespace ToDoListStructure.Presentation.Service.ImageNote
         void ValidateParameters(ImageNoteParam param);
 
         void ValidateParameters(List<ImageNoteParam> param);
->>>>>>> Stashed changes
     }
 }

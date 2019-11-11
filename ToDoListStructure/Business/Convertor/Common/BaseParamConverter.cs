@@ -1,19 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common.CustomAttributes;
 
 namespace ToDoListStructure.Business.Convertor.Common
 {
-	class BaseParamConverter<Tin, Tout> : IBaseParamConverter<Tin, Tout>
+	abstract class BaseParamConverter<TParam, TEntity> : IBaseParamConverter<TParam, TEntity>
 	{
-		public Tout ConvertSpecific(Tin param, Tout entity)
-		{
-			throw new NotImplementedException();
-		}
+		abstract public TEntity ConvertSpecific(TParam param, TEntity entity);
 
-		public Tout ConvertStandart(Tin param, Tout entity)
+		public TEntity ConvertStandart(TParam param, TEntity entity)
 		{
-			throw new NotImplementedException();
+			IDictionary<string,PropertyInfo> paramInfo = param.GetType()
+																.GetProperties()
+																	.Where(prop=>prop.GetCustomAttribute(typeof(Ignore)) == null)
+																		.ToDictionary(paramProp=>paramProp.Name,paramProp=>paramProp);
+
+			foreach (var paramPair in paramInfo)
+			{
+				if (entity.GetType().GetProperty(paramPair.Key)!=null)
+				{
+					entity.GetType().GetProperty(paramPair.Key).SetValue(entity,paramPair.Value.GetValue(param));
+				}
+			}
+
+			return entity;
 		}
 	}
 }

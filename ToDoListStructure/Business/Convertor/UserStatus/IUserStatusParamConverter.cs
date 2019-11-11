@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.UserStatus
 {
-    interface IUserStatusParamConverter
+    interface IUserStatusParamConverter:IBaseParamConverter<UserStatusParam,Data.Entity.UserStatus>
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.UserStatus Convert(UserStatusParam param);
-		Entities.UserStatus Convert(UserStatusParam param, Entities.UserStatus oldEntity);
->>>>>>> Stashed changes
+        ToDoListStructure.Data.Entity.UserStatus Convert(UserStatusParam param, Data.Entity.UserStatus oldEntity);
     }
 }

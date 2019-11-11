@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
-using ToDoListStructure.Entities.Consumers;
+using ToDoListStructure.Data.Common;
 
-namespace ToDoListStructure.Entities.Notes
+namespace ToDoListStructure.Data.Entity
 {
-    abstract class Note:NamedPersistent
+    abstract class Note:PersistentNamed
     {
         public Color Color { get; set; }
 
-        public Account Account { get; set; }
+        public AccountStatus Account { get; set; }
 
         public Category Category { get; set; }
 

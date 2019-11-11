@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.ShareStatus;
+using ToDoListStructure.DataAccess.Dao.ShareStatus;
 
 namespace ToDoListStructure.Business.Processor.ShareStaus
 {
     class ShareStatusProcessor:IShareStatusProcessor
     {
-<<<<<<< Updated upstream
-    }
-=======
 		public IShareStatusDao Dao = new ShareStatusDao();
 
 		public IShareStatusParamConverter ParamConverter = new ShareStatusParamConverter();
@@ -17,17 +16,17 @@ namespace ToDoListStructure.Business.Processor.ShareStaus
 
 		public ShareStatusResult Create(ShareStatusParam param)
 		{
-			Entities.ShareStatus entity = ParamConverter.Convert(param);
+			Data.Entity.ShareStatus entity = ParamConverter.Convert(param,null);
 			entity = Dao.Save(entity);
 			return ResultConverter.Convert(entity);
 		}
 
 		public List<ShareStatusResult> Create(List<ShareStatusParam> param)
 		{
-			List<Entities.ShareStatus> entities = new List<Entities.ShareStatus>();
+			List<Data.Entity.ShareStatus> entities = new List<Data.Entity.ShareStatus>();
 			foreach (var item in param)
 			{
-				entities.Add(ParamConverter.Convert(item));
+				entities.Add(ParamConverter.Convert(item,null));
 			}
 			Dao.Save(entities);
 			List<ShareStatusResult> result = new List<ShareStatusResult>();
@@ -47,16 +46,24 @@ namespace ToDoListStructure.Business.Processor.ShareStaus
 
 		public ShareStatusResult Find(long id)
 		{
-			Entities.ShareStatus entity = Dao.Find(id);
+			Data.Entity.ShareStatus entity = Dao.Find(id);
 			return ResultConverter.Convert(entity);
 		}
 
 		public List<ShareStatusResult> Find()
 		{
-			List<Entities.ShareStatus> entities = Dao.Find();
+			List<Data.Entity.ShareStatus> entities = Dao.Find();
 			List<ShareStatusResult> results = new List<ShareStatusResult>();
 			entities.ForEach(entity => results.Add(ResultConverter.Convert(entity)));
 			return results;
+		}
+
+		public List<ShareStatusResult> FindByAttribute(string att, string value)
+		{
+			List<Data.Entity.ShareStatus> entities = Dao.FindByAttribute(att, value);
+			List<ShareStatusResult> result = new List<ShareStatusResult>();
+			entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
+			return result;
 		}
 
 		public ShareStatusResult FindByCode(string code)
@@ -66,7 +73,7 @@ namespace ToDoListStructure.Business.Processor.ShareStaus
 
 		public List<ShareStatusResult> FindByName(string name)
 		{
-			List<Entities.ShareStatus> entities = Dao.FindByName(name);
+			List<Data.Entity.ShareStatus> entities = Dao.FindByName(name);
 			List<ShareStatusResult> result = new List<ShareStatusResult>();
 			entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
 			return result;
@@ -74,17 +81,16 @@ namespace ToDoListStructure.Business.Processor.ShareStaus
 
 		public void Update(long id, ShareStatusParam param)
 		{
-			Entities.ShareStatus oldEntity = Dao.Find(id);
-			Entities.ShareStatus newEntity = ParamConverter.Convert(param, oldEntity);
+			Data.Entity.ShareStatus oldEntity = Dao.Find(id);
+			Data.Entity.ShareStatus newEntity = ParamConverter.Convert(param, oldEntity);
 			Dao.Update(newEntity);
 		}
 
 		public void Update(List<ShareStatusParam> param)
 		{
-			List<Entities.ShareStatus> entity = new List<Entities.ShareStatus>();
-			param.ForEach(item => entity.Add(ParamConverter.Convert(item)));
+			List<Data.Entity.ShareStatus> entity = new List<Data.Entity.ShareStatus>();
+			param.ForEach(item => entity.Add(ParamConverter.Convert(item,Dao.Find(item.Id))));
 			Dao.Update(entity);
 		}
 	}
->>>>>>> Stashed changes
 }

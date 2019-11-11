@@ -1,80 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.DataAccess.Dao.ImageNote
 {
-    class ImageNoteDao:IImageNoteDao
+    class ImageNoteDao : IImageNoteDao
     {
-<<<<<<< Updated upstream
-=======
         public void Delete(long id)
         {
-            Entities.ImageNote entity = Find(id);
-            Delete(entity);
+            throw new NotImplementedException();
         }
 
-        public void Delete(Entities.ImageNote entity)
+        public void Delete(Data.Entity.ImageNote entity)
         {
-            ImageNoteData.Data.Remove(entity.Id);
+            throw new NotImplementedException();
         }
 
-        public void Delete(List<long> ids)
+        public void Delete(List<Data.Entity.ImageNote> entity)
         {
-            ids.ForEach(id => Delete(id));
+            throw new NotImplementedException();
         }
 
-        public Entities.ImageNote Find(long id)
+        public Data.Entity.ImageNote Find(long id)
         {
-            return ImageNoteData.Data.Values
-                    .Where(entity => entity.Id.Equals(id))
-                    .Single();
+            throw new NotImplementedException();
         }
 
-        public List<Entities.ImageNote> Find()
+        public List<Data.Entity.ImageNote> Find()
         {
-            return ImageNoteData.Data.Values.ToList();
+            throw new NotImplementedException();
         }
 
-        public Entities.ImageNote FindByCode(string code)
+        public Data.Entity.ImageNote Save(Data.Entity.ImageNote entity)
         {
-            return ImageNoteData.Data.Values
-                .Where(entity => entity.Code.Equals(code))
-                .Single();
+            throw new NotImplementedException();
         }
 
-        public List<Entities.ImageNote> FindByName(string name)
+        public List<Data.Entity.ImageNote> Save(List<Data.Entity.ImageNote> entity)
         {
-            return ImageNoteData.Data.Values
-                .Where(entity => entity.Name.Equals(name))
-                .ToList();
+            throw new NotImplementedException();
         }
 
-        public Entities.ImageNote Save(Entities.ImageNote entity)
+        public Data.Entity.ImageNote Update(Data.Entity.ImageNote entity)
         {
-            ImageNoteData.Data.Add(entity.Id, entity);
-            return entity;
+            throw new NotImplementedException();
         }
 
-        public List<Entities.ImageNote> Save(List<Entities.ImageNote> entity)
+        public List<Data.Entity.ImageNote> Update(List<Data.Entity.ImageNote> entity)
         {
-            entity.ForEach(element => Save(element));
-            return entity;
+            throw new NotImplementedException();
         }
-
-        public Entities.ImageNote Update(Entities.ImageNote entity)
-        {
-            Delete(entity.Id);
-            Save(entity);
-            return entity;
-        }
-
-        public List<Entities.ImageNote> Update(List<Entities.ImageNote> entity)
-        {
-            entity.ForEach(element => Update(element));
-            return entity;
-        }
->>>>>>> Stashed changes
     }
 }

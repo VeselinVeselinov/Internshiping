@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.ListNote;
 
 namespace ToDoListStructure.Business.Processor.ListNote
 {
     interface IListNoteProcessor
     {
-<<<<<<< Updated upstream
-=======
         ListNoteResult Create(ListNoteParam param);
 
         List<ListNoteResult> Create(List<ListNoteParam> param);
@@ -23,10 +22,5 @@ namespace ToDoListStructure.Business.Processor.ListNote
         ListNoteResult Find(long id);
 
         List<ListNoteResult> Find();
-
-        ListNoteResult FindByCode(string code);
-
-        List<ListNoteResult> FindByName(string name);
->>>>>>> Stashed changes
     }
 }

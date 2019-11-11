@@ -1,31 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.UserStatus;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.UserStatus
 {
-    class UserStatusParamConverter:IUserStatusParamConverter
+    class UserStatusParamConverter:BaseParamConverter<UserStatusParam, Data.Entity.UserStatus>,IUserStatusParamConverter
     {
-<<<<<<< Updated upstream
-    }
-=======
-		public IUserStatusDao Dao = new UserStatusDao();
-
-        public Entities.UserStatus Convert(UserStatusParam param)
-        {
-			Entities.UserStatus entity = new Entities.UserStatus()
-			{
-				Id = param.Id,
-				Code = param.Code,
-				Name = param.Name,
-				Description = param.Description,
-			};
-			return entity;
+		public override Data.Entity.UserStatus ConvertSpecific(UserStatusParam param, Data.Entity.UserStatus entity)
+		{
+			throw new NotImplementedException();
 		}
 
-		public Entities.UserStatus Convert(UserStatusParam param, Entities.UserStatus oldEntity)
-		{
-			Entities.UserStatus entity = null;
+		public Data.Entity.UserStatus Convert(UserStatusParam param, Data.Entity.UserStatus oldEntity)
+        {
+			Data.Entity.UserStatus entity = null;
 
 			if (oldEntity != null)
 			{
@@ -33,7 +24,11 @@ namespace ToDoListStructure.Business.Convertor.UserStatus
 			}
 			else
 			{
-				entity = new Entities.UserStatus();
+				entity = new Data.Entity.UserStatus()
+				{
+					Id=param.Id,
+					Code=param.Code
+				};
 			}
 
 			entity.Name = param.Name;
@@ -42,5 +37,4 @@ namespace ToDoListStructure.Business.Convertor.UserStatus
 			return entity;
 		}
 	}
->>>>>>> Stashed changes
 }

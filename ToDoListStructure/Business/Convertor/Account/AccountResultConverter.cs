@@ -1,24 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Text;
-<<<<<<< Updated upstream
-
-namespace ToDoListStructure.Business.Convertor.Account
-{
-    class AccountResultConverter:IAccountResultConverter
-    {
-    }
-=======
 using ToDoListStructure.Business.Convertor.Common;
-using ToDoListStructure.Entities;
 
 namespace ToDoListStructure.Business.Convertor.Account
 {
-    class AccountResultConverter: BaseResultConverter<Entities.Account, AccountResult>,IAccountResultConverter
-    {
-		public override AccountResult ConvertSpecific(Entities.Account entity, AccountResult result)
+	class AccountResultConverter : BaseResultConverter<Data.Entity.Account, AccountResult>, IAccountResultConverter
+	{
+		public override AccountResult ConvertSpecific(Data.Entity.Account entity, AccountResult result)
 		{
 			result.StatusId = entity.Status.Id;
 			result.StatusName = entity.Status.Name;
@@ -27,11 +17,10 @@ namespace ToDoListStructure.Business.Convertor.Account
 			return result;
 		}
 
-		public AccountResult Convert(Entities.Account param)
-        {
-			AccountResult result = ConvertStandart(param,new AccountResult());
-			return ConvertSpecific(param,result);
-        }
+		public AccountResult Convert(Data.Entity.Account param)
+		{
+			AccountResult result = ConvertStandart(param, new AccountResult());
+			return ConvertSpecific(param, result);
+		}
 	}
->>>>>>> Stashed changes
 }

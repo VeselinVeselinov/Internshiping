@@ -4,45 +4,45 @@ using System.Text;
 
 namespace ToDoListStructure.DataAccess.Dao.ListNoteItem
 {
-    class ListNoteItemData
-    {
-        public static List<Entities.ListNoteItem> Storage;
-        public static IDictionary<long, Entities.ListNoteItem> Data;
+	class ListNoteItemData
+	{
+		public static List<Data.Entity.ListNoteItem> Storage;
+		public static IDictionary<long, Data.Entity.ListNoteItem> Data;
 
-        static ListNoteItemData()
-        {
-            Data = new Dictionary<long, Entities.ListNoteItem>();
-            Storage = new List<Entities.ListNoteItem>()
-            {
-                new Entities.ListNoteItem()
-                {
+		static ListNoteItemData()
+		{
+			Data = new Dictionary<long, Data.Entity.ListNoteItem>();
+			Storage = new List<Data.Entity.ListNoteItem>()
+			{
+				new Data.Entity.ListNoteItem()
+				{
 					Id=1,
-                    Code="One",
-                    Name="First",
-                    Description="First tester",
-                    IsChecked=false,
-                    Text="No content in this tester"
-                },
-                new Entities.ListNoteItem()
-                {
+					Code="LNoteItm3",
+					Name="First",
+					Description="First tester lit note item on the system.",
+					IsChecked=false,
+					Text="No content in this tester"
+				},
+				new Data.Entity.ListNoteItem()
+				{
 					Id=2,
-                    Code="Two",
-                    Name="Second",
-                    Description="Second tester",
-                    IsChecked=false,
-                    Text="No content in this tester"
-                },
-                new Entities.ListNoteItem()
-                {
+					Code="LNoteItm2",
+					Name="Second",
+					Description="Second tester list note item on the system.",
+					IsChecked=false,
+					Text="No content in this tester"
+				},
+				new Data.Entity.ListNoteItem()
+				{
 					Id=3,
-                    Code="Three",
-                    Name="Third",
-                    Description="Third tester",
-                    IsChecked=false,
-                    Text="No content in this tester"
-                }
-            };
-            Storage.ForEach(entity => Data.Add(entity.Id, entity));
-        }
-    }
+					Code="LNoteItm3",
+					Name="Third",
+					Description="Third tester list note item on the system.",
+					IsChecked=false,
+					Text="No content in this tester"
+				}
+			};
+			Storage.ForEach(entity => Data.Add(entity.Id, entity));
+		}
+	}
 }

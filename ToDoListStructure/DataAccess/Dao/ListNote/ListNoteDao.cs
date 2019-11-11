@@ -1,80 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.DataAccess.Dao.ListNote
 {
-    class ListNoteDao:IListNoteDao
+    class ListNoteDao : IListNoteDao
     {
-<<<<<<< Updated upstream
-=======
         public void Delete(long id)
         {
-            Entities.ListNote entity = Find(id);
-            Delete(entity);
+            throw new NotImplementedException();
         }
 
-        public void Delete(Entities.ListNote entity)
+        public void Delete(Data.Entity.ListNote entity)
         {
-            ListNoteData.Data.Remove(entity.Id);
+            throw new NotImplementedException();
         }
 
-        public void Delete(List<long> ids)
+        public void Delete(List<Data.Entity.ListNote> entity)
         {
-            ids.ForEach(id => Delete(id));
+            throw new NotImplementedException();
         }
 
-        public Entities.ListNote Find(long id)
+        public Data.Entity.ListNote Find(long id)
         {
-            return ListNoteData.Data.Values
-                    .Where(entity => entity.Id.Equals(id))
-                    .Single();
+            throw new NotImplementedException();
         }
 
-        public List<Entities.ListNote> Find()
+        public List<Data.Entity.ListNote> Find()
         {
-            return ListNoteData.Data.Values.ToList();
+            throw new NotImplementedException();
         }
 
-        public Entities.ListNote FindByCode(string code)
+        public Data.Entity.ListNote Save(Data.Entity.ListNote entity)
         {
-            return ListNoteData.Data.Values
-                .Where(entity => entity.Code.Equals(code))
-                .Single();
+            throw new NotImplementedException();
         }
 
-        public List<Entities.ListNote> FindByName(string name)
+        public List<Data.Entity.ListNote> Save(List<Data.Entity.ListNote> entity)
         {
-            return ListNoteData.Data.Values
-                .Where(entity => entity.Name.Equals(name))
-                .ToList();
+            throw new NotImplementedException();
         }
 
-        public Entities.ListNote Save(Entities.ListNote entity)
+        public Data.Entity.ListNote Update(Data.Entity.ListNote entity)
         {
-            ListNoteData.Data.Add(entity.Id, entity);
-            return entity;
+            throw new NotImplementedException();
         }
 
-        public List<Entities.ListNote> Save(List<Entities.ListNote> entity)
+        public List<Data.Entity.ListNote> Update(List<Data.Entity.ListNote> entity)
         {
-            entity.ForEach(element => Save(element));
-            return entity;
+            throw new NotImplementedException();
         }
-
-        public Entities.ListNote Update(Entities.ListNote entity)
-        {
-            Delete(entity.Id);
-            Save(entity);
-            return entity;
-        }
-
-        public List<Entities.ListNote> Update(List<Entities.ListNote> entity)
-        {
-            entity.ForEach(element => Update(element));
-            return entity;
-        }
->>>>>>> Stashed changes
     }
 }

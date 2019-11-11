@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoListStructure.Business.Convertor
+namespace ToDoListStructure.Business.Convertor.Common
 {
-    abstract class BaseParam
+    class BaseResult
     {
         public long Id { get; set; }
     }

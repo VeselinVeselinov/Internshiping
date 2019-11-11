@@ -1,36 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.AccountStatus;
+using ToDoListStructure.Data.Common;
 
 namespace ToDoListStructure.Presentation.Service.AccountStatus
 {
     interface IAccountStatusService
     {
-<<<<<<< Updated upstream
-=======
-        Response FindByPK(long id);
+		Response FindByPK(long id);
 
-        Response FindByCode(string code);
+		Response FindByCode(string code);
 
-        Response FindByName(string name);
+		Response FindByName(string name);
 
-        Response ListAll();
+		Response FindByAttribute(string att, string value);
 
-        Response Create(AccountStatusParam param);
+		Response ListAll();
 
-        Response Create(List<AccountStatusParam> param);
+		Response Create(AccountStatusParam param);
 
-        Response Update(long id, AccountStatusParam param);
+		Response Create(List<AccountStatusParam> param);
 
-        Response Update(List<AccountStatusParam> param);
+		Response Update(long id, AccountStatusParam param);
 
-        Response DeleteByID(long id);
+		Response Update(List<AccountStatusParam> param);
 
-        Response Delte(List<long> idList);
+		Response DeleteByID(long id);
 
-        void ValidateParameters(AccountStatusParam param);
+		Response Delte(List<long> idList);
 
-        void ValidateParameters(List<AccountStatusParam> param);
->>>>>>> Stashed changes
-    }
+		void ValidateParameters(AccountStatusParam param);
+
+		void ValidateParameters(List<AccountStatusParam> param);
+	}
 }

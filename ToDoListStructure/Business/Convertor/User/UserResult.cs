@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.User
 {
@@ -10,6 +11,8 @@ namespace ToDoListStructure.Business.Convertor.User
 
 		public string Password { get; set; }
 
-		public Entities.UserStatus Status { get; set; }
+		public long StatusId { get; set; }
+
+		public string StatusName { get; set; }
 	}
 }

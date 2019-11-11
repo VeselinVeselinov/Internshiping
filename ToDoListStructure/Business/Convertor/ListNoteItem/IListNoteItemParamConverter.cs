@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.ListNoteItem
 {
-    interface IListNoteItemParamConverter
+    interface IListNoteItemParamConverter:IBaseParamConverter<ListNoteItemParam,Data.Entity.ListNoteItem>
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.ListNoteItem Convert(ListNoteItemParam param);
-        Entities.ListNoteItem Convert(ListNoteItemParam param, Entities.ListNoteItem oldEntity);
->>>>>>> Stashed changes
+		Data.Entity.ListNoteItem Convert(ListNoteItemParam param, Data.Entity.ListNoteItem oldEntity);
     }
 }

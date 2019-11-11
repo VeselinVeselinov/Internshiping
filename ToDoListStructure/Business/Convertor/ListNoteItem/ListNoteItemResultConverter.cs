@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.ListNoteItem
 {
-    class ListNoteItemResultConverter:IListNoteItemResultConverter
+    class ListNoteItemResultConverter : BaseResultConverter<Data.Entity.ListNoteItem,ListNoteItemResult>,IListNoteItemResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public ListNoteItemResult Convert(Entities.ListNoteItem param)
+		public override ListNoteItemResult ConvertSpecific(Data.Entity.ListNoteItem entity, ListNoteItemResult result)
+		{
+			throw new NotImplementedException();
+		}
+
+		public ListNoteItemResult Convert(Data.Entity.ListNoteItem param)
         {
-            ListNoteItemResult result = new ListNoteItemResult()
-            {
-                Id = param.Id,
-                Code = param.Code,
-                Name = param.Name,
-                Description = param.Description,
-                IsChecked=param.IsChecked,
-                Text=param.Text
-            };
-            return result;
+			ListNoteItemResult result = ConvertStandart(param, new ListNoteItemResult());
+			return result;
         }
->>>>>>> Stashed changes
-    }
+	}
 }

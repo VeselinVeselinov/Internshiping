@@ -1,32 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.AccountStatus;
 
 namespace ToDoListStructure.Business.Processor.AccountStatus
 {
     interface IAccountStatusProcessor
     {
-<<<<<<< Updated upstream
-=======
-        AccountStatusResult Create(AccountStatusParam param);
+		AccountStatusResult Create(AccountStatusParam param);
 
-        List<AccountStatusResult> Create(List<AccountStatusParam> param);
+		List<AccountStatusResult> Create(List<AccountStatusParam> param);
 
-        void Update(long id, AccountStatusParam param);
+		void Update(long id, AccountStatusParam param);
 
-        void Update(List<AccountStatusParam> param);
+		void Update(List<AccountStatusParam> param);
 
-        void Delete(long id);
+		void Delete(long id);
 
-        void Delete(List<long> idList);
+		void Delete(List<long> idList);
 
-        AccountStatusResult Find(long id);
+		AccountStatusResult Find(long id);
 
-        List<AccountStatusResult> Find();
+		List<AccountStatusResult> Find();
 
-        AccountStatusResult FindByCode(string code);
+		AccountStatusResult FindByCode(string code);
 
-        List<AccountStatusResult> FindByName(string name);
->>>>>>> Stashed changes
-    }
+		List<AccountStatusResult> FindByName(string name);
+
+		List<AccountStatusResult> FindByAttribute(string att, string value);
+	}
 }

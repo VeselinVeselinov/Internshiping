@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoListStructure.Entities.Notes;
+using ToDoListStructure.Data.Common;
 
-namespace ToDoListStructure.Entities.Consumers
+namespace ToDoListStructure.Data.Entity
 {
-    class Account:NamedPersistent
+    class Account:PersistentNamed
     {
         public string FirstName { get; set; }
 

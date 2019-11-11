@@ -1,89 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.ImageNote;
+using ToDoListStructure.DataAccess.Dao.ImageNote;
 
 namespace ToDoListStructure.Business.Processor.ImageNote
 {
     class ImageNoteProcessor:IImageNoteProcessor
     {
-<<<<<<< Updated upstream
-=======
-        public IImageNoteDao Dao = new ImageNoteDao();
+        public IImageNoteDao Dao { get; set; }
 
-        public IImageNoteParamConverter ParamConverter = new ImageNoteParamConverter();
+        public IImageNoteParamConverter ParamConverter { get; set; }
 
-        public IImageNoteResultConverter ResultConverter = new ImageNoteResultConverter();
+        public IImageNoteResultConverter ResultConverter { get; set; }
 
         public ImageNoteResult Create(ImageNoteParam param)
         {
-            Entities.ImageNote entity = ParamConverter.Convert(param);
-            entity = Dao.Save(entity);
-            return ResultConverter.Convert(entity);
+            throw new NotImplementedException();
         }
 
         public List<ImageNoteResult> Create(List<ImageNoteParam> param)
         {
-            List<Entities.ImageNote> entities = new List<Entities.ImageNote>();
-            foreach (var item in param)
-            {
-                entities.Add(ParamConverter.Convert(item));
-            }
-            Dao.Save(entities);
-            List<ImageNoteResult> result = new List<ImageNoteResult>();
-            entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
-            return result;
+            throw new NotImplementedException();
         }
 
         public void Delete(long id)
         {
-            Dao.Delete(id);
+            throw new NotImplementedException();
         }
 
         public void Delete(List<long> idList)
         {
-            Dao.Delete(idList);
+            throw new NotImplementedException();
         }
 
         public ImageNoteResult Find(long id)
         {
-            Entities.ImageNote entity = Dao.Find(id);
-            return ResultConverter.Convert(entity);
+            throw new NotImplementedException();
         }
 
         public List<ImageNoteResult> Find()
         {
-            List<Entities.ImageNote> entities = Dao.Find();
-            List<ImageNoteResult> results = new List<ImageNoteResult>();
-            entities.ForEach(entity => results.Add(ResultConverter.Convert(entity)));
-            return results;
-        }
-
-        public ImageNoteResult FindByCode(string code)
-        {
-            return ResultConverter.Convert(Dao.FindByCode(code));
-        }
-
-        public List<ImageNoteResult> FindByName(string name)
-        {
-            List<Entities.ImageNote> entities = Dao.FindByName(name);
-            List<ImageNoteResult> result = new List<ImageNoteResult>();
-            entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
-            return result;
+            throw new NotImplementedException();
         }
 
         public void Update(long id, ImageNoteParam param)
         {
-            Entities.ImageNote oldEntity = Dao.Find(id);
-            Entities.ImageNote newEntity = ParamConverter.Convert(param, oldEntity);
-            Dao.Update(newEntity);
+            throw new NotImplementedException();
         }
 
         public void Update(List<ImageNoteParam> param)
         {
-            List<Entities.ImageNote> entity = new List<Entities.ImageNote>();
-            param.ForEach(item => entity.Add(ParamConverter.Convert(item)));
-            Dao.Update(entity);
+            throw new NotImplementedException();
         }
->>>>>>> Stashed changes
     }
 }

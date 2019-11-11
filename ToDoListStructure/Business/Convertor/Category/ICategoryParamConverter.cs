@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.Category
 {
-    interface ICategoryParamConverter
+    interface ICategoryParamConverter:IBaseParamConverter<CategoryParam,Data.Entity.Category>
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.Category Convert(CategoryParam param);
-
-        Entities.Category Convert(CategoryParam param, Entities.Category oldEntity);
->>>>>>> Stashed changes
+        ToDoListStructure.Data.Entity.Category Convert(CategoryParam param,Data.Entity.Category oldEntity);
     }
 }

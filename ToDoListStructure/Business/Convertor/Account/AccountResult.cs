@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.Account
 {
-    class AccountResult
+    class AccountResult:BaseResultNamed
     {
-<<<<<<< Updated upstream
-    }
-=======
 		public string FirstName { get; set; }
 
 		public string LastName { get; set; }
@@ -27,5 +25,4 @@ namespace ToDoListStructure.Business.Convertor.Account
 
 		public string StatusName { get; set; }
 	}
->>>>>>> Stashed changes
 }

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.ImageNote;
 
 namespace ToDoListStructure.Business.Processor.ImageNote
 {
     interface IImageNoteProcessor
     {
-<<<<<<< Updated upstream
-=======
         ImageNoteResult Create(ImageNoteParam param);
 
         List<ImageNoteResult> Create(List<ImageNoteParam> param);
@@ -23,10 +22,5 @@ namespace ToDoListStructure.Business.Processor.ImageNote
         ImageNoteResult Find(long id);
 
         List<ImageNoteResult> Find();
-
-        ImageNoteResult FindByCode(string code);
-
-        List<ImageNoteResult> FindByName(string name);
->>>>>>> Stashed changes
     }
 }

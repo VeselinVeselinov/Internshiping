@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoListStructure.Entities.Notes
+namespace ToDoListStructure.Data.Common
 {
-    class ImageNote:Note
+    class Response
     {
-        public string Url { get; set; }
-
         public string Text { get; set; }
+
+        public bool Result { get; set; }
     }
 }

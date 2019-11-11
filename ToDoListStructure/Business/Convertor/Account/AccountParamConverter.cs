@@ -1,54 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-<<<<<<< Updated upstream
-=======
 using ToDoListStructure.DataAccess.Dao.Account;
-using ToDoListStructure.Entities;
 using Newtonsoft.Json;
 using ToDoListStructure.DataAccess.Dao.User;
 using ToDoListStructure.DataAccess.Dao.AccountStatus;
->>>>>>> Stashed changes
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.Account
 {
-    class AccountParamConverter:IAccountParamConverter
+    class AccountParamConverter: BaseParamConverter<AccountParam, Data.Entity.Account>, IAccountParamConverter
     {
-<<<<<<< Updated upstream
-=======
-        private IUserDao userDao = new UserDao();
+		private IUserDao userDao = new UserDao();
 
 		private IAccountStatusDao accountStatusDao = new AccountStatusDao();
 
-        public Entities.Account Convert(AccountParam param, Entities.Account oldentity)
-        {
-            Entities.Account entity = null;
-
-            if (oldentity!=null)
-            {
-                entity = oldentity;
-            }
-            else
-            {
-                entity = new Entities.Account()
-				{
-					Id=param.Id,
-					Code=param.Code
-				};
-            }
-
-            entity.Name = param.Name;
-            entity.Description = param.Description;
-            entity.FirstName = param.FirstName;
-            entity.LastName = param.LastName;
-            entity.Address = param.Address;
-            entity.Phone = param.Phone;
-            entity.Email = param.Email;
+		public override Data.Entity.Account ConvertSpecific(AccountParam param, Data.Entity.Account entity)
+		{
 			entity.User = userDao.Find(param.UserId);
 			entity.Status = accountStatusDao.Find(param.StatusId);
 
-            return entity;
-        }
->>>>>>> Stashed changes
-    }
+			if (entity.Status==null||entity.User==null)
+			{
+				throw new InvalidOperationException();
+			}
+
+			return entity;
+		}
+
+		public Data.Entity.Account Convert(AccountParam param, Data.Entity.Account oldentity)
+		{
+			Data.Entity.Account entity = null;
+
+			if (oldentity != null)
+			{
+				entity = oldentity;
+			}
+			else
+			{
+				entity = new Data.Entity.Account()
+				{
+					Id = param.Id,
+					Code = param.Code
+				};
+			}
+
+			entity = ConvertStandart(param,entity);
+			entity = ConvertSpecific(param,entity);
+
+			return entity;
+		}
+	}
 }

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.User;
+using ToDoListStructure.Business.Processor.User;
+using ToDoListStructure.Data.Common;
 
 namespace ToDoListStructure.Presentation.Service.User
 {
     class UserService:IUserService
     {
-<<<<<<< Updated upstream
-=======
 		public IUserProcessor Processor = new UserProcessor();
 
 		public Response Create(UserParam param)
@@ -31,12 +32,12 @@ namespace ToDoListStructure.Presentation.Service.User
 			Response response = new Response();
 			try
 			{
-				response.Text = "These entities have been created on the system :" + Environment.NewLine + JsonConverter.JsonConverter.ObjToJson(Processor.Create(param));
+				response.Text = "These Data.Entity have been created on the system :" + Environment.NewLine + JsonConverter.JsonConverter.ObjToJson(Processor.Create(param));
 				response.Result = true;
 			}
 			catch
 			{
-				response.Text = "Unfortunately something went wrong. Are you sure that the entities you are trying to create don't already exist.";
+				response.Text = "Unfortunately something went wrong. Are you sure that the Data.Entity you are trying to create don't already exist.";
 				response.Result = false;
 			}
 			return response;
@@ -67,12 +68,12 @@ namespace ToDoListStructure.Presentation.Service.User
 				Processor.Delete(idList);
 				string ids = null;
 				idList.ForEach(id => ids += id.ToString() + " ");
-				response.Text = $"Entities {ids}were successfully removed from the system.";
+				response.Text = $"Data.Entity {ids}were successfully removed from the system.";
 				response.Result = true;
 			}
 			catch
 			{
-				response.Text = "Unfortunately something went wrong. Are you sure all the entities you are trying to delete exist ?";
+				response.Text = "Unfortunately something went wrong. Are you sure all the Data.Entity you are trying to delete exist ?";
 				response.Result = false;
 			}
 			return response;
@@ -101,7 +102,7 @@ namespace ToDoListStructure.Presentation.Service.User
 			try
 			{
 				Processor.Find();
-				response.Text = "Here is a list of all the entities on the system :" + Environment.NewLine + JsonConverter.JsonConverter.ObjToJson(Processor.Find());
+				response.Text = "Here is a list of all the Data.Entity on the system :" + Environment.NewLine + JsonConverter.JsonConverter.ObjToJson(Processor.Find());
 				response.Result = true;
 			}
 			catch
@@ -135,26 +136,25 @@ namespace ToDoListStructure.Presentation.Service.User
 			try
 			{
 				Processor.Update(param);
-				response.Text = "Entities have been updated.";
+				response.Text = "Data.Entity have been updated.";
 				response.Result = true;
 			}
 			catch
 			{
-				response.Text = "The command was unable to execute. Are you sure the entities you want to update exist.";
+				response.Text = "The command was unable to execute. Are you sure the Data.Entity you want to update exist.";
 				response.Result = false;
 			}
 			return response;
 		}
 
 		public void ValidateParameters(UserParam param)
-        {
-            throw new NotImplementedException();
-        }
+		{
+			throw new NotImplementedException();
+		}
 
-        public void ValidateParameters(List<UserParam> param)
-        {
-            throw new NotImplementedException();
-        }
->>>>>>> Stashed changes
-    }
+		public void ValidateParameters(List<UserParam> param)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

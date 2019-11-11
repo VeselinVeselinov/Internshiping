@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.AccountStatus
 {
-    interface IAccountStatusParamConverter
+    interface IAccountStatusParamConverter:IBaseParamConverter<AccountStatusParam,Data.Entity.AccountStatus>
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.AccountStatus Convert(AccountStatusParam param);
-
-        Entities.AccountStatus Convert(AccountStatusParam param,Entities.AccountStatus oldEntity);
->>>>>>> Stashed changes
+		Data.Entity.AccountStatus Convert(AccountStatusParam param, Data.Entity.AccountStatus oldEntity);
     }
 }

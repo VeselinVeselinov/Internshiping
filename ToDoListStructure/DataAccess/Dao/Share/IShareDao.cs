@@ -6,20 +6,17 @@ namespace ToDoListStructure.DataAccess.Dao.Share
 {
     interface IShareDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.Share Save(ToDoListStructure.Entities.Share entity);
-        List<ToDoListStructure.Entities.Share> Save(List<ToDoListStructure.Entities.Share> entity);
+		ToDoListStructure.Data.Entity.Share Save(ToDoListStructure.Data.Entity.Share entity);
+		List<ToDoListStructure.Data.Entity.Share> Save(List<ToDoListStructure.Data.Entity.Share> entity);
 
-        ToDoListStructure.Entities.Share Update(ToDoListStructure.Entities.Share entity);
-        List<ToDoListStructure.Entities.Share> Update(List<ToDoListStructure.Entities.Share> entity);
+		ToDoListStructure.Data.Entity.Share Update(ToDoListStructure.Data.Entity.Share entity);
+		List<ToDoListStructure.Data.Entity.Share> Update(List<ToDoListStructure.Data.Entity.Share> entity);
 
-        void Delete(long id);
-        void Delete(ToDoListStructure.Entities.Share entity);
-        void Delete(List<long> ids);
+		void Delete(long id);
+		void Delete(ToDoListStructure.Data.Entity.Share entity);
+		void Delete(List<long> ids);
 
-        ToDoListStructure.Entities.Share Find(long id);
-        List<ToDoListStructure.Entities.Share> Find();
->>>>>>> Stashed changes
-    }
+		ToDoListStructure.Data.Entity.Share Find(long id);
+		List<ToDoListStructure.Data.Entity.Share> Find();
+	}
 }

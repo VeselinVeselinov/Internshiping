@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.AccountStatus
 {
-    class AccountStatusResultConverter:IAccountStatusResultConverter
+    class AccountStatusResultConverter : BaseResultConverter<Data.Entity.AccountStatus,AccountStatusResult>,IAccountStatusResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public AccountStatusResult Convert(Entities.AccountStatus param)
+		public override AccountStatusResult ConvertSpecific(Data.Entity.AccountStatus entity, AccountStatusResult result)
+		{
+			throw new NotImplementedException();
+		}
+
+		public AccountStatusResult Convert(Data.Entity.AccountStatus param)
         {
-            AccountStatusResult result = new AccountStatusResult()
-            {
-                Id=param.Id,
-                Code=param.Code,
-                Name=param.Name,
-                Description=param.Description
-            };
+			AccountStatusResult result = ConvertStandart(param, new AccountStatusResult());
+
             return result;
         }
->>>>>>> Stashed changes
-    }
+	}
 }

@@ -6,16 +6,16 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.Common
 {
-	abstract class BaseResultConverter<Tin, Tout> : IBaseResultConverter<Tin, Tout>
+	abstract class BaseResultConverter<TEntity, TResult> : IBaseResultConverter<TEntity, TResult>
 	{
-		public abstract Tout ConvertSpecific(Tin entity, Tout result);
+		public abstract TResult ConvertSpecific(TEntity entity, TResult result);
 
-		public Tout ConvertStandart(Tin entity, Tout result)
+		public TResult ConvertStandart(TEntity entity, TResult result)
 		{
 			Dictionary<string, PropertyInfo> entityInfo = entity.GetType()
 															.GetProperties()
 																.ToDictionary(prop => prop.Name, prop => prop);
-			
+
 			foreach (var entityPair in entityInfo)
 			{
 				if (result.GetType().GetProperty(entityPair.Key) != null)

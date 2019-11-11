@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoListStructure.Entities;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.Alert
 {
     class AlertParam:BaseParamNamed
     {
-        public Note Note { get; set; }
+		public long NoteId { get; set; }
 
-        public DateTime TimeReminder { get; set; }
+		public DateTime TimeReminder { get; set; }
 
-        public Entities.AlertStatus Status { get; set; }
-    }
+		public long StatusId { get; set; }
+	}
 }

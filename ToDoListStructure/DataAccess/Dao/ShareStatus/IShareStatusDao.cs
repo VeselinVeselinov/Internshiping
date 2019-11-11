@@ -6,22 +6,20 @@ namespace ToDoListStructure.DataAccess.Dao.ShareStatus
 {
     interface IShareStatusDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.ShareStatus Save(ToDoListStructure.Entities.ShareStatus entity);
-        List<ToDoListStructure.Entities.ShareStatus> Save(List<ToDoListStructure.Entities.ShareStatus> entity);
+		ToDoListStructure.Data.Entity.ShareStatus Save(ToDoListStructure.Data.Entity.ShareStatus entity);
+		List<ToDoListStructure.Data.Entity.ShareStatus> Save(List<ToDoListStructure.Data.Entity.ShareStatus> entity);
 
-        ToDoListStructure.Entities.ShareStatus Update(ToDoListStructure.Entities.ShareStatus entity);
-        List<ToDoListStructure.Entities.ShareStatus> Update(List<ToDoListStructure.Entities.ShareStatus> entity);
+		ToDoListStructure.Data.Entity.ShareStatus Update(ToDoListStructure.Data.Entity.ShareStatus entity);
+		List<ToDoListStructure.Data.Entity.ShareStatus> Update(List<ToDoListStructure.Data.Entity.ShareStatus> entity);
 
-        void Delete(long id);
-        void Delete(ToDoListStructure.Entities.ShareStatus entity);
-        void Delete(List<long> ids);
+		void Delete(long id);
+		void Delete(ToDoListStructure.Data.Entity.ShareStatus entity);
+		void Delete(List<long> ids);
 
-        ToDoListStructure.Entities.ShareStatus Find(long id);
-        List<ToDoListStructure.Entities.ShareStatus> Find();
-		Entities.ShareStatus FindByCode(string code);
-		List<Entities.ShareStatus> FindByName(string name);
->>>>>>> Stashed changes
-    }
+		ToDoListStructure.Data.Entity.ShareStatus Find(long id);
+		List<ToDoListStructure.Data.Entity.ShareStatus> Find();
+		Data.Entity.ShareStatus FindByCode(string code);
+		List<Data.Entity.ShareStatus> FindByName(string name);
+		List<Data.Entity.ShareStatus> FindByAttribute(string att, string value);
+	}
 }

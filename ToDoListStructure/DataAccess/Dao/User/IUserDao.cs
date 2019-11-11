@@ -6,20 +6,17 @@ namespace ToDoListStructure.DataAccess.Dao.User
 {
     interface IUserDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.User Save(ToDoListStructure.Entities.User entity);
-        List<ToDoListStructure.Entities.User> Save(List<ToDoListStructure.Entities.User> entity);
+		ToDoListStructure.Data.Entity.User Save(ToDoListStructure.Data.Entity.User entity);
+		List<ToDoListStructure.Data.Entity.User> Save(List<ToDoListStructure.Data.Entity.User> entity);
 
-        ToDoListStructure.Entities.User Update(ToDoListStructure.Entities.User entity);
-        List<ToDoListStructure.Entities.User> Update(List<ToDoListStructure.Entities.User> entity);
+		ToDoListStructure.Data.Entity.User Update(ToDoListStructure.Data.Entity.User entity);
+		List<ToDoListStructure.Data.Entity.User> Update(List<ToDoListStructure.Data.Entity.User> entity);
 
-        void Delete(long id);
-        void Delete(ToDoListStructure.Entities.User entity);
-        void Delete(List<long> ids);
+		void Delete(long id);
+		void Delete(ToDoListStructure.Data.Entity.User entity);
+		void Delete(List<long> ids);
 
-        ToDoListStructure.Entities.User Find(long id);
-        List<ToDoListStructure.Entities.User> Find();
->>>>>>> Stashed changes
-    }
+		ToDoListStructure.Data.Entity.User Find(long id);
+		List<ToDoListStructure.Data.Entity.User> Find();
+	}
 }

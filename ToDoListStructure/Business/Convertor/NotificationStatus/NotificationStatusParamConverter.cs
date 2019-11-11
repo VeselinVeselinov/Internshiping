@@ -1,31 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.NotificationStatus;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.NotificationStatus
 {
-    class NotificationStatusParamConverter:INotificationStatusParamConverter
+    class NotificationStatusParamConverter:BaseParamConverter<NotificationStatusParam,Data.Entity.NotificationStatus>,INotificationStatusParamConverter
     {
-<<<<<<< Updated upstream
-    }
-=======
-		public INotificationStatusDao Dao = new NotificationStatusDao();
-
-        public Entities.NotificationStatus Convert(NotificationStatusParam param)
-        {
-			Entities.NotificationStatus entity = new Entities.NotificationStatus()
-			{
-				Id = param.Id,
-				Code = param.Code,
-				Name = param.Name,
-				Description = param.Description,
-			};
-			return entity;
+		public override Data.Entity.NotificationStatus ConvertSpecific(NotificationStatusParam param, Data.Entity.NotificationStatus entity)
+		{
+			throw new NotImplementedException();
 		}
 
-		public Entities.NotificationStatus Convert(NotificationStatusParam param, Entities.NotificationStatus oldEntity)
-		{
-			Entities.NotificationStatus entity = null;
+		public Data.Entity.NotificationStatus Convert(NotificationStatusParam param, Data.Entity.NotificationStatus oldEntity)
+        {
+			Data.Entity.NotificationStatus entity = null;
 
 			if (oldEntity != null)
 			{
@@ -33,7 +24,11 @@ namespace ToDoListStructure.Business.Convertor.NotificationStatus
 			}
 			else
 			{
-				entity = new Entities.NotificationStatus();
+				entity = new Data.Entity.NotificationStatus()
+				{
+					Id=param.Id,
+					Code=param.Code
+				};
 			}
 
 			entity.Name = param.Name;
@@ -42,5 +37,4 @@ namespace ToDoListStructure.Business.Convertor.NotificationStatus
 			return entity;
 		}
 	}
->>>>>>> Stashed changes
 }

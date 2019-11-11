@@ -1,33 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.UserStatus;
 
 namespace ToDoListStructure.Business.Processor.UserStatus
 {
     interface IUserStatusProcessor
     {
-<<<<<<< Updated upstream
-    }
-=======
-        UserStatusResult Create(UserStatusParam param);
+		UserStatusResult Create(UserStatusParam param);
 
-        List<UserStatusResult> Create(List<UserStatusParam> param);
+		List<UserStatusResult> Create(List<UserStatusParam> param);
 
-        void Update(long id, UserStatusParam param);
+		void Update(long id, UserStatusParam param);
 
-        void Update(List<UserStatusParam> param);
+		void Update(List<UserStatusParam> param);
 
-        void Delete(long id);
+		void Delete(long id);
 
-        void Delete(List<long> idList);
+		void Delete(List<long> idList);
 
-        UserStatusResult Find(long id);
+		UserStatusResult Find(long id);
 
-        List<UserStatusResult> Find();
+		List<UserStatusResult> Find();
 
 		UserStatusResult FindByCode(string code);
 
 		List<UserStatusResult> FindByName(string name);
+
+		List<UserStatusResult> FindByAttribute(string att, string value);
 	}
->>>>>>> Stashed changes
 }

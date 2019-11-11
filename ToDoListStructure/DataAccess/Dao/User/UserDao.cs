@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.DataAccess.Dao.User
 {
-    class UserDao:IUserDao
+    class UserDao : IUserDao
     {
-<<<<<<< Updated upstream
-    }
-=======
 		public void Delete(long id)
 		{
-			Entities.User entity = Find(id);
+			Data.Entity.User entity = Find(id);
 			Delete(entity);
 		}
 
-		public void Delete(Entities.User entity)
+		public void Delete(Data.Entity.User entity)
 		{
 			UserData.Data.Remove(entity.Id);
 		}
@@ -26,42 +24,50 @@ namespace ToDoListStructure.DataAccess.Dao.User
 			ids.ForEach(id => Delete(id));
 		}
 
-		public Entities.User Find(long id)
+		public void Delete(List<Data.Entity.User> entity)
 		{
-			return UserData.Data.Values
-					.Where(entity => entity.Id.Equals(id))
-					.Single();
+			throw new NotImplementedException();
 		}
 
-		public List<Entities.User> Find()
+		public Data.Entity.User Find(long id)
+		{
+			if (!UserData.Data.ContainsKey(id))
+			{
+				return null;
+			}
+			else return UserData.Data.Values
+										.Where(entity => entity.Id.Equals(id))
+											.Single();
+		}
+
+		public List<Data.Entity.User> Find()
 		{
 			return UserData.Data.Values.ToList();
 		}
 
-		public Entities.User Save(Entities.User entity)
+		public Data.Entity.User Save(Data.Entity.User entity)
 		{
 			UserData.Data.Add(entity.Id, entity);
 			return entity;
 		}
 
-		public List<Entities.User> Save(List<Entities.User> entity)
+		public List<Data.Entity.User> Save(List<Data.Entity.User> entity)
 		{
 			entity.ForEach(element => Save(element));
 			return entity;
 		}
 
-		public Entities.User Update(Entities.User entity)
+		public Data.Entity.User Update(Data.Entity.User entity)
 		{
 			Delete(entity.Id);
 			Save(entity);
 			return entity;
 		}
 
-		public List<Entities.User> Update(List<Entities.User> entity)
+		public List<Data.Entity.User> Update(List<Data.Entity.User> entity)
 		{
 			entity.ForEach(element => Update(element));
 			return entity;
 		}
 	}
->>>>>>> Stashed changes
 }

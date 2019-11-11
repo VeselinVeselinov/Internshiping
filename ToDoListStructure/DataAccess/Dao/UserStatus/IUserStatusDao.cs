@@ -6,22 +6,20 @@ namespace ToDoListStructure.DataAccess.Dao.UserStatus
 {
     interface IUserStatusDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.UserStatus Save(ToDoListStructure.Entities.UserStatus entity);
-        List<ToDoListStructure.Entities.UserStatus> Save(List<ToDoListStructure.Entities.UserStatus> entity);
+		ToDoListStructure.Data.Entity.UserStatus Save(ToDoListStructure.Data.Entity.UserStatus entity);
+		List<ToDoListStructure.Data.Entity.UserStatus> Save(List<ToDoListStructure.Data.Entity.UserStatus> entity);
 
-        ToDoListStructure.Entities.UserStatus Update(ToDoListStructure.Entities.UserStatus entity);
-        List<ToDoListStructure.Entities.UserStatus> Update(List<ToDoListStructure.Entities.UserStatus> entity);
+		ToDoListStructure.Data.Entity.UserStatus Update(ToDoListStructure.Data.Entity.UserStatus entity);
+		List<ToDoListStructure.Data.Entity.UserStatus> Update(List<ToDoListStructure.Data.Entity.UserStatus> entity);
 
-        void Delete(long id);
-        void Delete(ToDoListStructure.Entities.UserStatus entity);
-        void Delete(List<long> ids);
+		void Delete(long id);
+		void Delete(ToDoListStructure.Data.Entity.UserStatus entity);
+		void Delete(List<long> ids);
 
-        ToDoListStructure.Entities.UserStatus Find(long id);
-        List<ToDoListStructure.Entities.UserStatus> Find();
-		Entities.UserStatus FindByCode(string code);
-		List<Entities.UserStatus> FindByName(string name);
->>>>>>> Stashed changes
-    }
+		ToDoListStructure.Data.Entity.UserStatus Find(long id);
+		List<ToDoListStructure.Data.Entity.UserStatus> Find();
+		Data.Entity.UserStatus FindByCode(string code);
+		List<Data.Entity.UserStatus> FindByName(string name);
+		List<Data.Entity.UserStatus> FindByAttribute(string att, string value);
+	}
 }

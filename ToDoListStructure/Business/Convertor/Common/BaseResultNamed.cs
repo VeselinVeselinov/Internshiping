@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoListStructure.Business.Convertor
+namespace ToDoListStructure.Business.Convertor.Common
 {
-    class BaseParamNamed:BaseParam
+    class BaseResultNamed:BaseResult
     {
         public string Code { get; set; }
 

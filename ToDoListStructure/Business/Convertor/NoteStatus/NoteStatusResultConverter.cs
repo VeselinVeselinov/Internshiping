@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.NoteStatus
 {
-    class NoteStatusResultConverter:INoteStatusResultConverter
+    class NoteStatusResultConverter : BaseResultConverter<Data.Entity.NoteStatus,NoteStatusResult>,INoteStatusResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public NoteStatusResult Convert(Entities.NoteStatus param)
+		public override NoteStatusResult ConvertSpecific(Data.Entity.NoteStatus entity, NoteStatusResult result)
+		{
+			throw new NotImplementedException();
+		}
+
+		public NoteStatusResult Convert(Data.Entity.NoteStatus param)
         {
-            NoteStatusResult result = new NoteStatusResult()
-            {
-                Id = param.Id,
-                Code = param.Code,
-                Name = param.Name,
-                Description = param.Description,
-            };
-            return result;
+			NoteStatusResult result = ConvertStandart(param, new NoteStatusResult());
+			return result;
         }
->>>>>>> Stashed changes
-    }
+	}
 }

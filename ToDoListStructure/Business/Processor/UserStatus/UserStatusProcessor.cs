@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.UserStatus;
+using ToDoListStructure.DataAccess.Dao.UserStatus;
 
 namespace ToDoListStructure.Business.Processor.UserStatus
 {
     class UserStatusProcessor:IUserStatusProcessor
     {
-<<<<<<< Updated upstream
-    }
-=======
 		public IUserStatusDao Dao = new UserStatusDao();
 
 		public IUserStatusParamConverter ParamConverter = new UserStatusParamConverter();
@@ -17,17 +16,17 @@ namespace ToDoListStructure.Business.Processor.UserStatus
 
 		public UserStatusResult Create(UserStatusParam param)
 		{
-			Entities.UserStatus entity = ParamConverter.Convert(param);
+			Data.Entity.UserStatus entity = ParamConverter.Convert(param,null);
 			entity = Dao.Save(entity);
 			return ResultConverter.Convert(entity);
 		}
 
 		public List<UserStatusResult> Create(List<UserStatusParam> param)
 		{
-			List<Entities.UserStatus> entities = new List<Entities.UserStatus>();
+			List<Data.Entity.UserStatus> entities = new List<Data.Entity.UserStatus>();
 			foreach (var item in param)
 			{
-				entities.Add(ParamConverter.Convert(item));
+				entities.Add(ParamConverter.Convert(item,null));
 			}
 			Dao.Save(entities);
 			List<UserStatusResult> result = new List<UserStatusResult>();
@@ -47,16 +46,24 @@ namespace ToDoListStructure.Business.Processor.UserStatus
 
 		public UserStatusResult Find(long id)
 		{
-			Entities.UserStatus entity = Dao.Find(id);
+			Data.Entity.UserStatus entity = Dao.Find(id);
 			return ResultConverter.Convert(entity);
 		}
 
 		public List<UserStatusResult> Find()
 		{
-			List<Entities.UserStatus> entities = Dao.Find();
+			List<Data.Entity.UserStatus> entities = Dao.Find();
 			List<UserStatusResult> results = new List<UserStatusResult>();
 			entities.ForEach(entity => results.Add(ResultConverter.Convert(entity)));
 			return results;
+		}
+
+		public List<UserStatusResult> FindByAttribute(string att, string value)
+		{
+			List<Data.Entity.UserStatus> entities = Dao.FindByAttribute(att, value);
+			List<UserStatusResult> result = new List<UserStatusResult>();
+			entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
+			return result;
 		}
 
 		public UserStatusResult FindByCode(string code)
@@ -66,7 +73,7 @@ namespace ToDoListStructure.Business.Processor.UserStatus
 
 		public List<UserStatusResult> FindByName(string name)
 		{
-			List<Entities.UserStatus> entities = Dao.FindByName(name);
+			List<Data.Entity.UserStatus> entities = Dao.FindByName(name);
 			List<UserStatusResult> result = new List<UserStatusResult>();
 			entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
 			return result;
@@ -74,17 +81,16 @@ namespace ToDoListStructure.Business.Processor.UserStatus
 
 		public void Update(long id, UserStatusParam param)
 		{
-			Entities.UserStatus oldEntity = Dao.Find(id);
-			Entities.UserStatus newEntity = ParamConverter.Convert(param, oldEntity);
+			Data.Entity.UserStatus oldEntity = Dao.Find(id);
+			Data.Entity.UserStatus newEntity = ParamConverter.Convert(param, oldEntity);
 			Dao.Update(newEntity);
 		}
 
 		public void Update(List<UserStatusParam> param)
 		{
-			List<Entities.UserStatus> entity = new List<Entities.UserStatus>();
-			param.ForEach(item => entity.Add(ParamConverter.Convert(item)));
+			List<Data.Entity.UserStatus> entity = new List<Data.Entity.UserStatus>();
+			param.ForEach(item => entity.Add(ParamConverter.Convert(item,Dao.Find(item.Id))));
 			Dao.Update(entity);
 		}
 	}
->>>>>>> Stashed changes
 }

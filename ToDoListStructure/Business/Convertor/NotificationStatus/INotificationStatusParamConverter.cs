@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.NotificationStatus
 {
-    interface INotificationStatusParamConverter
+    interface INotificationStatusParamConverter:IBaseParamConverter<NotificationStatusParam,Data.Entity.NotificationStatus>
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.NotificationStatus Convert(NotificationStatusParam param);
-		Entities.NotificationStatus Convert(NotificationStatusParam param, Entities.NotificationStatus oldEntity);
->>>>>>> Stashed changes
+		Data.Entity.NotificationStatus Convert(NotificationStatusParam param, Data.Entity.NotificationStatus oldEntity);
     }
 }

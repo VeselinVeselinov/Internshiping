@@ -1,45 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.NoteStatus;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.NoteStatus
 {
-    class NoteStatusParamConverter:INoteStatusParamConverter
+    class NoteStatusParamConverter:BaseParamConverter<NoteStatusParam, Data.Entity.NoteStatus>,INoteStatusParamConverter
     {
-<<<<<<< Updated upstream
-=======
-        public INoteStausDao Dao = new NoteStatusDao();
+		public override Data.Entity.NoteStatus ConvertSpecific(NoteStatusParam param, Data.Entity.NoteStatus entity)
+		{
+			throw new NotImplementedException();
+		}
 
-        public Entities.NoteStatus Convert(NoteStatusParam param)
+		public Data.Entity.NoteStatus Convert(NoteStatusParam param, Data.Entity.NoteStatus oldEntity)
         {
-            Entities.NoteStatus entity = new Entities.NoteStatus()
-            {
-				Id = param.Id,
-                Code = param.Code,
-                Name = param.Name,
-                Description = param.Description,
-            };
-            return entity;
-        }
+			Data.Entity.NoteStatus entity = null;
 
-        public Entities.NoteStatus Convert(NoteStatusParam param, Entities.NoteStatus oldEntity)
-        {
-            Entities.NoteStatus entity = null;
+			if (oldEntity != null)
+			{
+				entity = oldEntity;
+			}
+			else
+			{
+				entity = new Data.Entity.NoteStatus()
+				{
+					Id=param.Id,
+					Code=param.Code
+				};
+			}
 
-            if (oldEntity != null)
-            {
-                entity = oldEntity;
-            }
-            else
-            {
-                entity = new Entities.NoteStatus();
-            }
+			entity.Name = param.Name;
+			entity.Description = param.Description;
 
-            entity.Name = param.Name;
-            entity.Description = param.Description;
-
-            return entity;
-        }
->>>>>>> Stashed changes
-    }
+			return entity;
+		}
+	}
 }

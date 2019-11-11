@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.ShareStatus
 {
-    class ShareStatusResultConverter:IShareStatusResultConverter
+    class ShareStatusResultConverter : BaseResultConverter<Data.Entity.ShareStatus,ShareStatusResult>,IShareStatusResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public ShareStatusResult Convert(Entities.ShareStatus param)
-        {
-			ShareStatusResult result = new ShareStatusResult()
-			{
-				Id = param.Id,
-				Code = param.Code,
-				Name = param.Name,
-				Description = param.Description,
-			};
-			return result;
+		public override ShareStatusResult ConvertSpecific(Data.Entity.ShareStatus entity, ShareStatusResult result)
+		{
+			throw new NotImplementedException();
 		}
->>>>>>> Stashed changes
-    }
+
+		public ShareStatusResult Convert(Data.Entity.ShareStatus param)
+        {
+			ShareStatusResult result = ConvertStandart(param, new ShareStatusResult());
+			return result;
+        }
+	}
 }

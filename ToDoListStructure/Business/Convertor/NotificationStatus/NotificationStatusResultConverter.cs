@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.NotificationStatus
 {
-    class NotificationStatusResultConverter:INotificationStatusResultConverter
+    class NotificationStatusResultConverter : BaseResultConverter<Data.Entity.NotificationStatus,NotificationStatusResult>,INotificationStatusResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public NotificationStatusResult Convert(Entities.NotificationStatus param)
-        {
-			NotificationStatusResult result = new NotificationStatusResult()
-			{
-				Id = param.Id,
-				Code = param.Code,
-				Name = param.Name,
-				Description = param.Description,
-			};
-			return result;
+		public override NotificationStatusResult ConvertSpecific(Data.Entity.NotificationStatus entity, NotificationStatusResult result)
+		{
+			throw new NotImplementedException();
 		}
->>>>>>> Stashed changes
-    }
+
+		public NotificationStatusResult Convert(Data.Entity.NotificationStatus param)
+        {
+			NotificationStatusResult result = ConvertStandart(param, new NotificationStatusResult());
+			return result;
+        }
+	}
 }

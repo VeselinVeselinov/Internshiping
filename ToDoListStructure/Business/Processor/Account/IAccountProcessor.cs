@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Account;
 
 namespace ToDoListStructure.Business.Processor.Account
 {
     interface IAccountProcessor
     {
-<<<<<<< Updated upstream
-=======
         AccountResult Create(AccountParam param);
 
         List<AccountResult> Create(List<AccountParam> param);
@@ -22,13 +21,12 @@ namespace ToDoListStructure.Business.Processor.Account
 
         AccountResult Find(long id);
 
-        AccountResult FindByCode(int code);
+        AccountResult FindByCode(string code);
 
         List<AccountResult> FindByName(string name);
 
         List<AccountResult> Find();
 
 		List<AccountResult> FindByAttribute(string att, string value);
->>>>>>> Stashed changes
-    }
+	}
 }

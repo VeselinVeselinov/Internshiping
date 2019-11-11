@@ -6,22 +6,20 @@ namespace ToDoListStructure.DataAccess.Dao.NotificationStatus
 {
     interface INotificationStatusDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.NotificationStatus Save(ToDoListStructure.Entities.NotificationStatus entity);
-        List<ToDoListStructure.Entities.NotificationStatus> Save(List<ToDoListStructure.Entities.NotificationStatus> entity);
+		ToDoListStructure.Data.Entity.NotificationStatus Save(ToDoListStructure.Data.Entity.NotificationStatus entity);
+		List<ToDoListStructure.Data.Entity.NotificationStatus> Save(List<ToDoListStructure.Data.Entity.NotificationStatus> entity);
 
-        ToDoListStructure.Entities.NotificationStatus Update(ToDoListStructure.Entities.NotificationStatus entity);
-        List<ToDoListStructure.Entities.NotificationStatus> Update(List<ToDoListStructure.Entities.NotificationStatus> entity);
+		ToDoListStructure.Data.Entity.NotificationStatus Update(ToDoListStructure.Data.Entity.NotificationStatus entity);
+		List<ToDoListStructure.Data.Entity.NotificationStatus> Update(List<ToDoListStructure.Data.Entity.NotificationStatus> entity);
 
-        void Delete(long id);
-        void Delete(ToDoListStructure.Entities.NotificationStatus entity);
-        void Delete(List<long> ids);
+		void Delete(long id);
+		void Delete(ToDoListStructure.Data.Entity.NotificationStatus entity);
+		void Delete(List<long> ids);
 
-        ToDoListStructure.Entities.NotificationStatus Find(long id);
-        List<ToDoListStructure.Entities.NotificationStatus> Find();
-		Entities.NotificationStatus FindByCode(string code);
-		List<Entities.NotificationStatus> FindByName(string name);
->>>>>>> Stashed changes
-    }
+		ToDoListStructure.Data.Entity.NotificationStatus Find(long id);
+		List<ToDoListStructure.Data.Entity.NotificationStatus> Find();
+		Data.Entity.NotificationStatus FindByCode(string code);
+		List<Data.Entity.NotificationStatus> FindByName(string name);
+		List<Data.Entity.NotificationStatus> FindByAttribute(string att, string value);
+	}
 }

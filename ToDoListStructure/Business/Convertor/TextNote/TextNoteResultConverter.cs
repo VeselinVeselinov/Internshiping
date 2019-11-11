@@ -1,25 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.TextNote
 {
-    class TextNoteResultConverter:ITextNoteResultConverter
+    class TextNoteResultConverter : ITextNoteResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public TextNoteResult Convert(Entities.TextNote param)
+        public TextNoteResult Convert(Data.Entity.TextNote param)
         {
-			TextNoteResult result = new TextNoteResult()
-			{
-				Id = param.Id,
-				Code = param.Code,
-				Name = param.Name,
-				Description = param.Description,
-				Content=param.Content
-			};
-			return result;
-		}
->>>>>>> Stashed changes
+            throw new NotImplementedException();
+        }
     }
 }

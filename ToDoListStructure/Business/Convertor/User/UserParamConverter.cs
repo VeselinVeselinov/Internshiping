@@ -1,31 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.ShareStatus;
+using ToDoListStructure.DataAccess.Dao.User;
+using ToDoListStructure.DataAccess.Dao.UserStatus;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.User
 {
-    class UserParamConverter:IUserParamConverter
+    class UserParamConverter:BaseParamConverter<UserParam,Data.Entity.User>,IUserParamConverter
     {
-<<<<<<< Updated upstream
-    }
-=======
-		public IUserDao Dao = new UserDao();
+		IUserStatusDao userStatusDao = new UserStatusDao();
 
-        public Entities.User Convert(UserParam param)
-        {
-			Entities.User entity = new Entities.User()
-			{
-				Id = param.Id,
-				UserName=param.UserName,
-				Password=param.Password,
-				Status=param.Status
-			};
+		public override Data.Entity.User ConvertSpecific(UserParam param, Data.Entity.User entity)
+		{
+			entity.Status = userStatusDao.Find(param.StatusId);
+
 			return entity;
 		}
 
-		public Entities.User Convert(UserParam param, Entities.User oldEntity)
-		{
-			Entities.User entity = null;
+		public Data.Entity.User Convert(UserParam param,Data.Entity.User oldEntity)
+        {
+			Data.Entity.User entity = null;
 
 			if (oldEntity != null)
 			{
@@ -33,15 +30,14 @@ namespace ToDoListStructure.Business.Convertor.User
 			}
 			else
 			{
-				entity = new Entities.User();
+				entity = new Data.Entity.User();
 			}
 
 			entity.UserName = param.UserName;
 			entity.Password = param.Password;
-			entity.Status = param.Status;
+			entity = ConvertSpecific(param,oldEntity);
 
 			return entity;
 		}
 	}
->>>>>>> Stashed changes
 }

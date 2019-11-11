@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.DataAccess.Dao.Share
 {
-    class ShareDao:IShareDao
+    class ShareDao : IShareDao
     {
-<<<<<<< Updated upstream
-    }
-=======
 		public void Delete(long id)
 		{
-			Entities.Share entity = Find(id);
+			Data.Entity.Share entity = Find(id);
 			Delete(entity);
 		}
 
-		public void Delete(Entities.Share entity)
+		public void Delete(Data.Entity.Share entity)
 		{
 			ShareData.Data.Remove(entity.Id);
 		}
@@ -26,42 +24,41 @@ namespace ToDoListStructure.DataAccess.Dao.Share
 			ids.ForEach(id => Delete(id));
 		}
 
-		public Entities.Share Find(long id)
+		public Data.Entity.Share Find(long id)
 		{
 			return ShareData.Data.Values
 					.Where(entity => entity.Id.Equals(id))
 					.Single();
 		}
 
-		public List<Entities.Share> Find()
+		public List<Data.Entity.Share> Find()
 		{
 			return ShareData.Data.Values.ToList();
 		}
 
-		public Entities.Share Save(Entities.Share entity)
+		public Data.Entity.Share Save(Data.Entity.Share entity)
 		{
 			ShareData.Data.Add(entity.Id, entity);
 			return entity;
 		}
 
-		public List<Entities.Share> Save(List<Entities.Share> entity)
+		public List<Data.Entity.Share> Save(List<Data.Entity.Share> entity)
 		{
 			entity.ForEach(element => Save(element));
 			return entity;
 		}
 
-		public Entities.Share Update(Entities.Share entity)
+		public Data.Entity.Share Update(Data.Entity.Share entity)
 		{
 			Delete(entity.Id);
 			Save(entity);
 			return entity;
 		}
 
-		public List<Entities.Share> Update(List<Entities.Share> entity)
+		public List<Data.Entity.Share> Update(List<Data.Entity.Share> entity)
 		{
 			entity.ForEach(element => Update(element));
 			return entity;
 		}
 	}
->>>>>>> Stashed changes
 }

@@ -1,45 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.Category;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.Category
 {
-    class CategoryParamConverter:ICategoryParamConverter
+    class CategoryParamConverter:BaseParamConverter<CategoryParam,Data.Entity.Category>,ICategoryParamConverter
     {
-<<<<<<< Updated upstream
-=======
-        public ICategoryDao Dao = new CategoryDao();
+		public override Data.Entity.Category ConvertSpecific(CategoryParam param, Data.Entity.Category entity)
+		{
+			throw new NotImplementedException();
+		}
 
-        public Entities.Category Convert(CategoryParam param)
+		public Data.Entity.Category Convert(CategoryParam param,Data.Entity.Category oldEntity)
         {
-            Entities.Category entity = new Entities.Category()
-            {
-				Id = param.Id,
-                Code = param.Code,
-                Name = param.Name,
-                Description = param.Description,
-            };
-            return entity;
-        }
+			Data.Entity.Category entity = null;
 
-        public Entities.Category Convert(CategoryParam param, Entities.Category oldEntity)
-        {
-            Entities.Category entity = null;
+			if (oldEntity != null)
+			{
+				entity = oldEntity;
+			}
+			else
+			{
+				entity = new Data.Entity.Category()
+				{
+					Id=param.Id,
+					Code=param.Code
+				};
+			}
 
-            if (oldEntity != null)
-            {
-                entity = oldEntity;
-            }
-            else
-            {
-                entity = new Entities.Category();
-            }
+			entity.Name = param.Name;
+			entity.Description = param.Description;
 
-            entity.Name = param.Name;
-            entity.Description = param.Description;
-
-            return entity;
-        }
->>>>>>> Stashed changes
-    }
+			return entity;
+		}
+	}
 }

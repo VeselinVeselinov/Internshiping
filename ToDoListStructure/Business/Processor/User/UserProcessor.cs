@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.User;
+using ToDoListStructure.DataAccess.Dao.User;
 
 namespace ToDoListStructure.Business.Processor.User
 {
     class UserProcessor:IUserProcessor
     {
-<<<<<<< Updated upstream
-    }
-=======
 		public IUserDao Dao = new UserDao();
 
 		public IUserParamConverter ParamConverter = new UserParamConverter();
@@ -17,17 +16,17 @@ namespace ToDoListStructure.Business.Processor.User
 
 		public UserResult Create(UserParam param)
 		{
-			Entities.User entity = ParamConverter.Convert(param);
+			Data.Entity.User entity = ParamConverter.Convert(param,null);
 			entity = Dao.Save(entity);
 			return ResultConverter.Convert(entity);
 		}
 
 		public List<UserResult> Create(List<UserParam> param)
 		{
-			List<Entities.User> entities = new List<Entities.User>();
+			List<Data.Entity.User> entities = new List<Data.Entity.User>();
 			foreach (var item in param)
 			{
-				entities.Add(ParamConverter.Convert(item));
+				entities.Add(ParamConverter.Convert(item,null));
 			}
 			Dao.Save(entities);
 			List<UserResult> result = new List<UserResult>();
@@ -47,13 +46,13 @@ namespace ToDoListStructure.Business.Processor.User
 
 		public UserResult Find(long id)
 		{
-			Entities.User entity = Dao.Find(id);
+			Data.Entity.User entity = Dao.Find(id);
 			return ResultConverter.Convert(entity);
 		}
 
 		public List<UserResult> Find()
 		{
-			List<Entities.User> entities = Dao.Find();
+			List<Data.Entity.User> entities = Dao.Find();
 			List<UserResult> results = new List<UserResult>();
 			entities.ForEach(entity => results.Add(ResultConverter.Convert(entity)));
 			return results;
@@ -61,17 +60,16 @@ namespace ToDoListStructure.Business.Processor.User
 
 		public void Update(long id, UserParam param)
 		{
-			Entities.User oldEntity = Dao.Find(id);
-			Entities.User newEntity = ParamConverter.Convert(param, oldEntity);
+			Data.Entity.User oldEntity = Dao.Find(id);
+			Data.Entity.User newEntity = ParamConverter.Convert(param, oldEntity);
 			Dao.Update(newEntity);
 		}
 
 		public void Update(List<UserParam> param)
 		{
-			List<Entities.User> entity = new List<Entities.User>();
-			param.ForEach(item => entity.Add(ParamConverter.Convert(item)));
+			List<Data.Entity.User> entity = new List<Data.Entity.User>();
+			param.ForEach(item => entity.Add(ParamConverter.Convert(item,Dao.Find(item.Id))));
 			Dao.Update(entity);
 		}
 	}
->>>>>>> Stashed changes
 }

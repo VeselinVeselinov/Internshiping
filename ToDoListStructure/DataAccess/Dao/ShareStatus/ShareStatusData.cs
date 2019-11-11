@@ -6,34 +6,34 @@ namespace ToDoListStructure.DataAccess.Dao.ShareStatus
 {
 	class ShareStatusData
 	{
-		public static List<Entities.ShareStatus> Storage;
-		public static IDictionary<long, Entities.ShareStatus> Data;
+		public static List<Data.Entity.ShareStatus> Storage;
+		public static IDictionary<long, Data.Entity.ShareStatus> Data;
 
 		static ShareStatusData()
 		{
-			Data = new Dictionary<long, Entities.ShareStatus>();
-			Storage = new List<Entities.ShareStatus>()
+			Data = new Dictionary<long, Data.Entity.ShareStatus>();
+			Storage = new List<Data.Entity.ShareStatus>()
 			{
-				new Entities.ShareStatus()
+				new Data.Entity.ShareStatus()
 				{
 					Id=1,
-					Code="First test share status",
+					Code="ShareStat1",
 					Name="First",
-					Description="This is the first share status test in the system"
+					Description="This is the first share status test in the system."
 				},
-				new Entities.ShareStatus()
+				new Data.Entity.ShareStatus()
 				{
 					Id=2,
-					Code="Second test share status",
+					Code="ShareStat2",
 					Name="Second",
-					Description="This is the second share status test in the system"
+					Description="This is the second share status test in the system."
 				},
-				new Entities.ShareStatus()
+				new Data.Entity.ShareStatus()
 				{
 					Id=3,
-					Code="Third test share status",
+					Code="ShareStat3",
 					Name="Third",
-					Description="This is the third share status test in the system"
+					Description="This is the third share status test in the system."
 				}
 			};
 			Storage.ForEach(entity => Data.Add(entity.Id, entity));

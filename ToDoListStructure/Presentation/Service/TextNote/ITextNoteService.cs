@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.TextNote;
+using ToDoListStructure.Data.Common;
 
 namespace ToDoListStructure.Presentation.Service.TextNote
 {
     interface ITextNoteService
     {
-<<<<<<< Updated upstream
-=======
         Response FindByPK(long id);
 
         Response ListAll();
-
-		Response FindByCode(string code);
-
-		Response FindByName(string name);
 
         Response Create(TextNoteParam param);
 
@@ -31,6 +27,5 @@ namespace ToDoListStructure.Presentation.Service.TextNote
         void ValidateParameters(TextNoteParam param);
 
         void ValidateParameters(List<TextNoteParam> param);
->>>>>>> Stashed changes
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoListStructure.Entities.Notes;
+using ToDoListStructure.Data.Common;
 
-namespace ToDoListStructure.Entities.Actions
+namespace ToDoListStructure.Data.Entity
 {
-    class Alert:NamedPersistent
+    class Alert:PersistentNamed
     {
         public Note Note { get; set; }
 

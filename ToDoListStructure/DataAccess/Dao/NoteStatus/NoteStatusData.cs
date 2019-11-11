@@ -4,39 +4,39 @@ using System.Text;
 
 namespace ToDoListStructure.DataAccess.Dao.NoteStatus
 {
-    class NoteStatusData
-    {
-        public static List<Entities.NoteStatus> Storage;
-        public static IDictionary<long, Entities.NoteStatus> Data;
+	class NoteStatusData
+	{
+		public static List<Data.Entity.NoteStatus> Storage;
+		public static IDictionary<long, Data.Entity.NoteStatus> Data;
 
-        static NoteStatusData()
-        {
-            Data = new Dictionary<long, Entities.NoteStatus>();
-            Storage = new List<Entities.NoteStatus>()
-            {
-                new Entities.NoteStatus()
-                {
+		static NoteStatusData()
+		{
+			Data = new Dictionary<long, Data.Entity.NoteStatus>();
+			Storage = new List<Data.Entity.NoteStatus>()
+			{
+				new Data.Entity.NoteStatus()
+				{
 					Id=1,
-                    Code="One",
-                    Name="First",
-                    Description="First tester",
-                },
-                new Entities.NoteStatus()
-                {
+					Code="NoteStatus1",
+					Name="First",
+					Description="First tester note status on the system.",
+				},
+				new Data.Entity.NoteStatus()
+				{
 					Id=2,
-                    Code="Two",
-                    Name="Second",
-                    Description="Second tester",
-                },
-                new Entities.NoteStatus()
-                {
+					Code="NoteStatus2",
+					Name="Second",
+					Description="Second tester note status on the system.",
+				},
+				new Data.Entity.NoteStatus()
+				{
 					Id=3,
-                    Code="Three",
-                    Name="Third",
-                    Description="Third tester",
-                }
-            };
-            Storage.ForEach(entity => Data.Add(entity.Id, entity));
-        }
-    }
+					Code="NoteStatus3",
+					Name="Third",
+					Description="Third tester note status on the system.",
+				}
+			};
+			Storage.ForEach(entity => Data.Add(entity.Id, entity));
+		}
+	}
 }

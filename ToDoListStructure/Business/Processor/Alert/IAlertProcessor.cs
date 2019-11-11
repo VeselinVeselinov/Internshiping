@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Alert;
 
 namespace ToDoListStructure.Business.Processor.Alert
 {
     interface IAlertProcessor
     {
-<<<<<<< Updated upstream
-=======
         AlertResult Create(AlertParam param);
 
         List<AlertResult> Create(List<AlertParam> param);
@@ -24,9 +23,10 @@ namespace ToDoListStructure.Business.Processor.Alert
 
         List<AlertResult> Find();
 
-        AlertResult FindByCode(string code);
+		AlertResult FindByCode(string code);
 
-        List<AlertResult> FindByName(string name);
->>>>>>> Stashed changes
+		List<AlertResult> FindByName(string name);
+
+		List<AlertResult> FindByAttribute(string att,string value);
     }
 }

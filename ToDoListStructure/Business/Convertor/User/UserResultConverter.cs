@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.User
 {
-    class UserResultConverter:IUserResultConverter
+    class UserResultConverter : BaseResultConverter<Data.Entity.User,UserResult>,IUserResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public UserResult Convert(Entities.User param)
-        {
-			UserResult result = new UserResult()
-			{
-				Id = param.Id,
-				UserName = param.UserName,
-				Password = param.Password,
-				Status = param.Status,
-			};
+		public override UserResult ConvertSpecific(Data.Entity.User entity, UserResult result)
+		{
+			result.StatusId = entity.Status.Id;
+			result.StatusName = entity.Status.Name;
+
 			return result;
 		}
->>>>>>> Stashed changes
-    }
+
+		public UserResult Convert(Data.Entity.User param)
+        {
+			UserResult result = ConvertStandart(param, new UserResult());
+
+			return ConvertSpecific(param,result);
+        }
+	}
 }

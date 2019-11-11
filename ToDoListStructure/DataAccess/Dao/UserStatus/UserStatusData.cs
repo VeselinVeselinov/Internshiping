@@ -6,34 +6,34 @@ namespace ToDoListStructure.DataAccess.Dao.UserStatus
 {
 	class UserStatusData
 	{
-		public static List<Entities.UserStatus> Storage;
-		public static IDictionary<long, Entities.UserStatus> Data;
+		public static List<Data.Entity.UserStatus> Storage;
+		public static IDictionary<long, Data.Entity.UserStatus> Data;
 
 		static UserStatusData()
 		{
-			Data = new Dictionary<long, Entities.UserStatus>();
-			Storage = new List<Entities.UserStatus>()
+			Data = new Dictionary<long, Data.Entity.UserStatus>();
+			Storage = new List<Data.Entity.UserStatus>()
 			{
-				new Entities.UserStatus()
+				new Data.Entity.UserStatus()
 				{
 					Id=1,
-					Code="First",
-					Name="Firster",
-					Description="The first user status test in the system"
+					Code="UsrStat1",
+					Name="FirsterSts",
+					Description="The first user status test in the system."
 				},
-				new Entities.UserStatus()
+				new Data.Entity.UserStatus()
 				{
 					Id=2,
-					Code="Second",
-					Name="Seconder",
-					Description="The second user status test in the system"
+					Code="UsrStat2",
+					Name="SeconderSts",
+					Description="The second user status test in the system."
 				},
-				new Entities.UserStatus()
+				new Data.Entity.UserStatus()
 				{
 					Id=3,
-					Code="Third",
-					Name="Thirder",
-					Description="The third user status test in the system"
+					Code="UsrStat3",
+					Name="ThirderSts",
+					Description="The third user status test in the system."
 				}
 			};
 			Storage.ForEach(entity => Data.Add(entity.Id, entity));

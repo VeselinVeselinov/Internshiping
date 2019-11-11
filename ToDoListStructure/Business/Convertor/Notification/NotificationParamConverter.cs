@@ -1,34 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.Alert;
+using ToDoListStructure.DataAccess.Dao.Notification;
+using ToDoListStructure.DataAccess.Dao.NotificationStatus;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.Notification
 {
-    class NotificationParamConverter:INotificationParamConverter
+    class NotificationParamConverter:BaseParamConverter<NotificationParam,Data.Entity.Notification>,INotificationParamConverter
     {
-<<<<<<< Updated upstream
-    }
-=======
-		public INotificationDao Dao = new NotificationDao();
+		IAlertDao alertDao = new AlertDao();
 
-		public Entities.Notification Convert(NotificationParam param)
+		INotificationStatusDao notificationStatusDao = new NotificationStatusDao();
+
+		public override Data.Entity.Notification ConvertSpecific(NotificationParam param, Data.Entity.Notification entity)
 		{
-			Entities.Notification entity = new Entities.Notification()
-			{
-				Id = param.Id,
-				Code = param.Code,
-				Name = param.Name,
-				Description = param.Description,
-				Alert=param.Alert,
-				NotificationMessage=param.NotificationMessage,
-				Status=param.Status
-			};
+			entity.Alert = alertDao.Find(param.AlertId);
+			entity.Status = notificationStatusDao.Find(param.StatusId);
 			return entity;
 		}
 
-		public Entities.Notification Convert(NotificationParam param, Entities.Notification oldEntity)
-		{
-			Entities.Notification entity = null;
+		public Data.Entity.Notification Convert(NotificationParam param, Data.Entity.Notification oldEntity)
+        {
+			Data.Entity.Notification entity = null;
 
 			if (oldEntity != null)
 			{
@@ -36,17 +32,19 @@ namespace ToDoListStructure.Business.Convertor.Notification
 			}
 			else
 			{
-				entity = new Entities.Notification();
+				entity = new Data.Entity.Notification()
+				{
+					Id=param.Id,
+					Code=param.Code
+				};
 			}
 
 			entity.Name = param.Name;
 			entity.Description = param.Description;
-			entity.Alert = param.Alert;
 			entity.NotificationMessage = param.NotificationMessage;
-			entity.Status = param.Status;
+			ConvertSpecific(param,oldEntity);
 
 			return entity;
 		}
 	}
->>>>>>> Stashed changes
 }

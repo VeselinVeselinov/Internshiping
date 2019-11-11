@@ -1,30 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Account;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.AccountStatus;
 
 namespace ToDoListStructure.Business.Convertor.AccountStatus
 {
-    class AccountStausParamConverter:IAccountStatusParamConverter
-    {
-<<<<<<< Updated upstream
-=======
-        public IAccountStatusDao Dao = new AccountStatusDao();
+    class AccountStausParamConverter: BaseParamConverter<AccountStatusParam, Data.Entity.AccountStatus>, IAccountStatusParamConverter
+	{
+		public override Data.Entity.AccountStatus ConvertSpecific(AccountStatusParam param, Data.Entity.AccountStatus entity)
+		{
+			throw new NotImplementedException();
+		}
 
-        public Entities.AccountStatus Convert(AccountStatusParam param)
+		public Data.Entity.AccountStatus Convert(AccountStatusParam param, Data.Entity.AccountStatus oldEntity)
         {
-            Entities.AccountStatus entity = new Entities.AccountStatus()
-            {
-				Id = param.Id,
-                Code = param.Code,
-                Name=param.Name,
-                Description=param.Description
-            };
-            return entity;
-        }
-
-        public Entities.AccountStatus Convert(AccountStatusParam param, Entities.AccountStatus oldEntity)
-        {
-            Entities.AccountStatus entity = null;
+			Data.Entity.AccountStatus entity = null;
 
             if (oldEntity!=null)
             {
@@ -32,7 +24,11 @@ namespace ToDoListStructure.Business.Convertor.AccountStatus
             }
             else
             {
-                entity = new Entities.AccountStatus();
+				entity = new Data.Entity.AccountStatus()
+				{
+					Id = param.Id,
+					Code=param.Code
+				};
             }
 
             entity.Name = param.Name;
@@ -40,6 +36,5 @@ namespace ToDoListStructure.Business.Convertor.AccountStatus
 
             return entity;
         }
->>>>>>> Stashed changes
-    }
+	}
 }

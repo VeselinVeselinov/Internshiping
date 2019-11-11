@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common.CustomAttributes;
 
-namespace ToDoListStructure.Business.Convertor
+namespace ToDoListStructure.Business.Convertor.Common
 {
-    class BaseResultNamed:BaseResult
+    class BaseParamNamed:BaseParam
     {
+		[Ignore]
         public string Code { get; set; }
 
         public string Name { get; set; }

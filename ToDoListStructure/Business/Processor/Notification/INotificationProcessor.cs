@@ -1,32 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Notification;
 
 namespace ToDoListStructure.Business.Processor.Notification
 {
     interface INotificationProcessor
     {
-<<<<<<< Updated upstream
-=======
-        NotificationResult Create(NotificationParam param);
+		NotificationResult Create(NotificationParam param);
 
-        List<NotificationResult> Create(List<NotificationParam> param);
+		List<NotificationResult> Create(List<NotificationParam> param);
 
-        void Update(long id, NotificationParam param);
+		void Update(long id, NotificationParam param);
 
-        void Update(List<NotificationParam> param);
+		void Update(List<NotificationParam> param);
 
-        void Delete(long id);
+		void Delete(long id);
 
-        void Delete(List<long> idList);
+		void Delete(List<long> idList);
 
-        NotificationResult Find(long id);
+		NotificationResult Find(long id);
 
-        List<NotificationResult> Find();
+		List<NotificationResult> Find();
 
 		NotificationResult FindByCode(string code);
 
 		List<NotificationResult> FindByName(string name);
->>>>>>> Stashed changes
-    }
+
+		List<NotificationResult> FindByAttribute(string att, string value);
+	}
 }

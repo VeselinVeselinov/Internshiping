@@ -1,49 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.ListNoteItem;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.ListNoteItem
 {
-    class ListNoteItemParamConverter:IListNoteItemParamConverter
+    class ListNoteItemParamConverter:BaseParamConverter<ListNoteItemParam,Data.Entity.ListNoteItem>,IListNoteItemParamConverter
     {
-<<<<<<< Updated upstream
-=======
-        public IListNoteItemDao Dao = new ListNoteItemDao();
+		public override Data.Entity.ListNoteItem ConvertSpecific(ListNoteItemParam param, Data.Entity.ListNoteItem entity)
+		{
+			throw new NotImplementedException();
+		}
 
-        public Entities.ListNoteItem Convert(ListNoteItemParam param)
+		public Data.Entity.ListNoteItem Convert(ListNoteItemParam param, Data.Entity.ListNoteItem oldEntity)
         {
-            Entities.ListNoteItem entity = new Entities.ListNoteItem()
-            {
-				Id = param.Id,
-                Code = param.Code,
-                Name = param.Name,
-                Description = param.Description,
-                IsChecked=param.IsChecked,
-                Text=param.Text
-            };
-            return entity;
-        }
+			Data.Entity.ListNoteItem entity = null;
 
-        public Entities.ListNoteItem Convert(ListNoteItemParam param, Entities.ListNoteItem oldEntity)
-        {
-            Entities.ListNoteItem entity = null;
+			if (oldEntity != null)
+			{
+				entity = oldEntity;
+			}
+			else
+			{
+				entity = new Data.Entity.ListNoteItem()
+				{
+					Id=param.Id,
+					Code=param.Code
+				};
+			}
 
-            if (oldEntity != null)
-            {
-                entity = oldEntity;
-            }
-            else
-            {
-                entity = new Entities.ListNoteItem();
-            }
+			entity.Name = param.Name;
+			entity.Description = param.Description;
+			entity.IsChecked = param.IsChecked;
+			entity.Text = param.Text;
 
-            entity.Name = param.Name;
-            entity.Description = param.Description;
-            entity.IsChecked = param.IsChecked;
-            entity.Text = param.Text;
-
-            return entity;
-        }
->>>>>>> Stashed changes
-    }
+			return entity;
+		}
+	}
 }

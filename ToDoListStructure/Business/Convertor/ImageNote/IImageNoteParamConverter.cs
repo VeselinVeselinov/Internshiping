@@ -6,11 +6,6 @@ namespace ToDoListStructure.Business.Convertor.ImageNote
 {
     interface IImageNoteParamConverter
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.ImageNote Convert(ImageNoteParam param);
-
-        Entities.ImageNote Convert(ImageNoteParam param, Entities.ImageNote oldEntity);
->>>>>>> Stashed changes
+        ToDoListStructure.Data.Entity.ImageNote Convert(ImageNoteParam param);
     }
 }

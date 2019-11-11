@@ -1,36 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Category;
+using ToDoListStructure.Data.Common;
 
 namespace ToDoListStructure.Presentation.Service.Category
 {
     interface ICategoryService
     {
-<<<<<<< Updated upstream
-=======
-        Response FindByPK(long id);
+		Response FindByPK(long id);
 
-        Response ListAll();
+		Response ListAll();
 
-        Response FindByCode(string code);
+		Response FindByCode(string code);
 
-        Response FindByName(string name);
+		Response FindByName(string name);
 
-        Response Create(CategoryParam param);
+		Response FindByAttribute(string att, string value);
 
-        Response Create(List<CategoryParam> param);
+		Response Create(CategoryParam param);
 
-        Response Update(long id, CategoryParam param);
+		Response Create(List<CategoryParam> param);
 
-        Response Update(List<CategoryParam> param);
+		Response Update(long id, CategoryParam param);
 
-        Response DeleteByID(long id);
+		Response Update(List<CategoryParam> param);
 
-        Response Delte(List<long> idList);
+		Response DeleteByID(long id);
 
-        void ValidateParameters(CategoryParam param);
+		Response Delte(List<long> idList);
 
-        void ValidateParameters(List<CategoryParam> param);
->>>>>>> Stashed changes
-    }
+		void ValidateParameters(CategoryParam param);
+
+		void ValidateParameters(List<CategoryParam> param);
+	}
 }

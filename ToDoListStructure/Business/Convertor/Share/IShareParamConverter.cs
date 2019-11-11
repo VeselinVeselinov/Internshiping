@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.Share
 {
-    interface IShareParamConverter
+    interface IShareParamConverter:IBaseParamConverter<ShareParam,Data.Entity.Share>
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.Share Convert(ShareParam param);
-
-		Entities.Share Convert(ShareParam param, Entities.Share oldEntity);
->>>>>>> Stashed changes
+        ToDoListStructure.Data.Entity.Share Convert(ShareParam param,Data.Entity.Share oldEntity);
     }
 }

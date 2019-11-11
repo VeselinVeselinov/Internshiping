@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.Category
 {
-    class CategoryResultConverter:ICategoryResultConverter
+    class CategoryResultConverter : BaseResultConverter<Data.Entity.Category,CategoryResult>,ICategoryResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public CategoryResult Convert(Entities.Category param)
+		public override CategoryResult ConvertSpecific(Data.Entity.Category entity, CategoryResult result)
+		{
+			throw new NotImplementedException();
+		}
+
+		public CategoryResult Convert(Data.Entity.Category param)
         {
-            CategoryResult result = new CategoryResult()
-            {
-                Id = param.Id,
-                Code = param.Code,
-                Name = param.Name,
-                Description = param.Description,
-            };
-            return result;
+			CategoryResult result = ConvertStandart(param,new CategoryResult());
+			return result;
         }
->>>>>>> Stashed changes
-    }
+	}
 }

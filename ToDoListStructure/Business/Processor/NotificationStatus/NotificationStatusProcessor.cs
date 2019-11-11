@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.NotificationStatus;
+using ToDoListStructure.DataAccess.Dao.NotificationStatus;
 
 namespace ToDoListStructure.Business.Processor.NotificationStatus
 {
     class NotificationStatusProcessor:INotificationStatusProcessor
     {
-<<<<<<< Updated upstream
-    }
-=======
 		public INotificationStatusDao Dao = new NotificationStatusDao();
 
 		public INotificationStatusParamConverter ParamConverter = new NotificationStatusParamConverter();
@@ -17,17 +16,17 @@ namespace ToDoListStructure.Business.Processor.NotificationStatus
 
 		public NotificationStatusResult Create(NotificationStatusParam param)
 		{
-			Entities.NotificationStatus entity = ParamConverter.Convert(param);
+			Data.Entity.NotificationStatus entity = ParamConverter.Convert(param,null);
 			entity = Dao.Save(entity);
 			return ResultConverter.Convert(entity);
 		}
 
 		public List<NotificationStatusResult> Create(List<NotificationStatusParam> param)
 		{
-			List<Entities.NotificationStatus> entities = new List<Entities.NotificationStatus>();
+			List<Data.Entity.NotificationStatus> entities = new List<Data.Entity.NotificationStatus>();
 			foreach (var item in param)
 			{
-				entities.Add(ParamConverter.Convert(item));
+				entities.Add(ParamConverter.Convert(item,null));
 			}
 			Dao.Save(entities);
 			List<NotificationStatusResult> result = new List<NotificationStatusResult>();
@@ -47,16 +46,24 @@ namespace ToDoListStructure.Business.Processor.NotificationStatus
 
 		public NotificationStatusResult Find(long id)
 		{
-			Entities.NotificationStatus entity = Dao.Find(id);
+			Data.Entity.NotificationStatus entity = Dao.Find(id);
 			return ResultConverter.Convert(entity);
 		}
 
 		public List<NotificationStatusResult> Find()
 		{
-			List<Entities.NotificationStatus> entities = Dao.Find();
+			List<Data.Entity.NotificationStatus> entities = Dao.Find();
 			List<NotificationStatusResult> results = new List<NotificationStatusResult>();
 			entities.ForEach(entity => results.Add(ResultConverter.Convert(entity)));
 			return results;
+		}
+
+		public List<NotificationStatusResult> FindByAttribute(string att, string value)
+		{
+			List<Data.Entity.NotificationStatus> entities = Dao.FindByAttribute(att, value);
+			List<NotificationStatusResult> result = new List<NotificationStatusResult>();
+			entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
+			return result;
 		}
 
 		public NotificationStatusResult FindByCode(string code)
@@ -66,7 +73,7 @@ namespace ToDoListStructure.Business.Processor.NotificationStatus
 
 		public List<NotificationStatusResult> FindByName(string name)
 		{
-			List<Entities.NotificationStatus> entities = Dao.FindByName(name);
+			List<Data.Entity.NotificationStatus> entities = Dao.FindByName(name);
 			List<NotificationStatusResult> result = new List<NotificationStatusResult>();
 			entities.ForEach(entity => result.Add(ResultConverter.Convert(entity)));
 			return result;
@@ -74,17 +81,16 @@ namespace ToDoListStructure.Business.Processor.NotificationStatus
 
 		public void Update(long id, NotificationStatusParam param)
 		{
-			Entities.NotificationStatus oldEntity = Dao.Find(id);
-			Entities.NotificationStatus newEntity = ParamConverter.Convert(param, oldEntity);
+			Data.Entity.NotificationStatus oldEntity = Dao.Find(id);
+			Data.Entity.NotificationStatus newEntity = ParamConverter.Convert(param, oldEntity);
 			Dao.Update(newEntity);
 		}
 
 		public void Update(List<NotificationStatusParam> param)
 		{
-			List<Entities.NotificationStatus> entity = new List<Entities.NotificationStatus>();
-			param.ForEach(item => entity.Add(ParamConverter.Convert(item)));
+			List<Data.Entity.NotificationStatus> entity = new List<Data.Entity.NotificationStatus>();
+			param.ForEach(item => entity.Add(ParamConverter.Convert(item,Dao.Find(item.Id))));
 			Dao.Update(entity);
 		}
 	}
->>>>>>> Stashed changes
 }

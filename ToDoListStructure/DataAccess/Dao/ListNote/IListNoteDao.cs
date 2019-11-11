@@ -6,22 +6,17 @@ namespace ToDoListStructure.DataAccess.Dao.ListNote
 {
     interface IListNoteDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.ListNote Save(ToDoListStructure.Entities.ListNote entity);
-        List<ToDoListStructure.Entities.ListNote> Save(List<ToDoListStructure.Entities.ListNote> entity);
+        ToDoListStructure.Data.Entity.ListNote Save(ToDoListStructure.Data.Entity.ListNote entity);
+        List<ToDoListStructure.Data.Entity.ListNote> Save(List<ToDoListStructure.Data.Entity.ListNote> entity);
 
-        ToDoListStructure.Entities.ListNote Update(ToDoListStructure.Entities.ListNote entity);
-        List<ToDoListStructure.Entities.ListNote> Update(List<ToDoListStructure.Entities.ListNote> entity);
+        ToDoListStructure.Data.Entity.ListNote Update(ToDoListStructure.Data.Entity.ListNote entity);
+        List<ToDoListStructure.Data.Entity.ListNote> Update(List<ToDoListStructure.Data.Entity.ListNote> entity);
 
         void Delete(long id);
-        void Delete(ToDoListStructure.Entities.ListNote entity);
-        void Delete(List<long> ids);
+        void Delete(ToDoListStructure.Data.Entity.ListNote entity);
+        void Delete(List<ToDoListStructure.Data.Entity.ListNote> entity);
 
-        ToDoListStructure.Entities.ListNote Find(long id);
-        List<ToDoListStructure.Entities.ListNote> Find();
-        Entities.ListNote FindByCode(string code);
-        List<Entities.ListNote> FindByName(string name);
->>>>>>> Stashed changes
+        ToDoListStructure.Data.Entity.ListNote Find(long id);
+        List<ToDoListStructure.Data.Entity.ListNote> Find();
     }
 }

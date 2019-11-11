@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.AlertStatus
 {
-    class AlertStatusResultConverter:IAlertStatusResultConverter
+    class AlertStatusResultConverter : BaseResultConverter<Data.Entity.AlertStatus, AlertStatusResult>,IAlertStatusResultConverter
     {
-<<<<<<< Updated upstream
-=======
-        public AlertStatusResult Convert(Entities.AlertStatus param)
+		public override AlertStatusResult ConvertSpecific(Data.Entity.AlertStatus entity, AlertStatusResult result)
+		{
+			throw new NotImplementedException();
+		}
+
+		public AlertStatusResult Convert(Data.Entity.AlertStatus param)
         {
-            AlertStatusResult result = new AlertStatusResult()
-            {
-                Id = param.Id,
-                Code = param.Code,
-                Name = param.Name,
-                Description = param.Description,
-            };
-            return result;
+			AlertStatusResult result = ConvertStandart(param, new AlertStatusResult());
+			return result;
         }
->>>>>>> Stashed changes
-    }
+	}
 }

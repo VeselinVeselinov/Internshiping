@@ -1,36 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.ListNoteItem;
+using ToDoListStructure.Data.Common;
 
 namespace ToDoListStructure.Presentation.Service.ListNoteItem
 {
     interface IListNoteItemService
     {
-<<<<<<< Updated upstream
-=======
-        Response FindByPK(long id);
+		Response FindByPK(long id);
 
-        Response ListAll();
+		Response ListAll();
 
-        Response FindByCode(string code);
+		Response FindByCode(string code);
 
-        Response FindByName(string name);
+		Response FindByName(string name);
 
-        Response Create(ListNoteItemParam param);
+		Response FindByAttribute(string att, string value);
 
-        Response Create(List<ListNoteItemParam> param);
+		Response Create(ListNoteItemParam param);
 
-        Response Update(long id, ListNoteItemParam param);
+		Response Create(List<ListNoteItemParam> param);
 
-        Response Update(List<ListNoteItemParam> param);
+		Response Update(long id, ListNoteItemParam param);
 
-        Response DeleteByID(long id);
+		Response Update(List<ListNoteItemParam> param);
 
-        Response Delte(List<long> idList);
+		Response DeleteByID(long id);
 
-        void ValidateParameters(ListNoteItemParam param);
+		Response Delte(List<long> idList);
 
-        void ValidateParameters(List<ListNoteItemParam> param);
->>>>>>> Stashed changes
-    }
+		void ValidateParameters(ListNoteItemParam param);
+
+		void ValidateParameters(List<ListNoteItemParam> param);
+	}
 }

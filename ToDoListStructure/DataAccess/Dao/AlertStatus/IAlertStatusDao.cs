@@ -6,22 +6,20 @@ namespace ToDoListStructure.DataAccess.Dao.AlertStatus
 {
     interface IAlertStatusDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.AlertStatus Save(ToDoListStructure.Entities.AlertStatus entity);
-        List<ToDoListStructure.Entities.AlertStatus> Save(List<ToDoListStructure.Entities.AlertStatus> entity);
+		ToDoListStructure.Data.Entity.AlertStatus Save(ToDoListStructure.Data.Entity.AlertStatus entity);
+		List<ToDoListStructure.Data.Entity.AlertStatus> Save(List<ToDoListStructure.Data.Entity.AlertStatus> entity);
 
-        ToDoListStructure.Entities.AlertStatus Update(ToDoListStructure.Entities.AlertStatus entity);
-        List<ToDoListStructure.Entities.AlertStatus> Update(List<ToDoListStructure.Entities.AlertStatus> entity);
+		ToDoListStructure.Data.Entity.AlertStatus Update(ToDoListStructure.Data.Entity.AlertStatus entity);
+		List<ToDoListStructure.Data.Entity.AlertStatus> Update(List<ToDoListStructure.Data.Entity.AlertStatus> entity);
 
-        void Delete(long id);
-        void Delete(ToDoListStructure.Entities.AlertStatus entity);
-        void Delete(List<long> ids);
+		void Delete(long id);
+		void Delete(ToDoListStructure.Data.Entity.AlertStatus entity);
+		void Delete(List<long> ids);
 
-        ToDoListStructure.Entities.AlertStatus Find(long id);
-        List<ToDoListStructure.Entities.AlertStatus> Find();
-        Entities.AlertStatus FindByCode(string code);
-        List<Entities.AlertStatus> FindByName(string name);
->>>>>>> Stashed changes
-    }
+		ToDoListStructure.Data.Entity.AlertStatus Find(long id);
+		List<ToDoListStructure.Data.Entity.AlertStatus> Find();
+		Data.Entity.AlertStatus FindByCode(string code);
+		List<Data.Entity.AlertStatus> FindByName(string name);
+		List<Data.Entity.AlertStatus> FindByAttribute(string att, string value);
+	}
 }

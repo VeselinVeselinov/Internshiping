@@ -1,32 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.Account;
+using ToDoListStructure.DataAccess.Dao.Share;
+using ToDoListStructure.DataAccess.Dao.ShareStatus;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.Share
 {
-    class ShareParamConverter:IShareParamConverter
+    class ShareParamConverter:BaseParamConverter<ShareParam,Data.Entity.Share>,IShareParamConverter
     {
-<<<<<<< Updated upstream
-    }
-=======
-        public IShareDao Dao { get; set; }
+		IAccountDao accountDao = new AccountDao();
 
-        public Entities.Share Convert(ShareParam param)
-        {
-			Entities.Share entity = new Entities.Share()
-			{
-				Id = param.Id,
-				Contributor=param.Contributor,
-				Owner=param.Owner,
-				Note=param.Note,
-				Status=param.Status
-			};
+		IShareStatusDao shareStatusDao = new ShareStatusDao();
+
+		//note dao missing ?
+
+		public override Data.Entity.Share ConvertSpecific(ShareParam param, Data.Entity.Share entity)
+		{
+			entity.Owner = accountDao.Find(param.OwnerId);
+			entity.Contributor = accountDao.Find(param.ContributorId);
+			entity.Status = shareStatusDao.Find(param.StatusId);
+
 			return entity;
 		}
 
-		public Entities.Share Convert(ShareParam param, Entities.Share oldEntity)
+		public Data.Entity.Share Convert(ShareParam param, Data.Entity.Share oldEntity)
 		{
-			Entities.Share entity = null;
+			Data.Entity.Share entity = null;
 
 			if (oldEntity != null)
 			{
@@ -34,16 +36,14 @@ namespace ToDoListStructure.Business.Convertor.Share
 			}
 			else
 			{
-				entity = new Entities.Share();
+				entity = new Data.Entity.Share()
+				{
+					Id=param.Id
+				};
 			}
-
-			entity.Contributor = param.Contributor;
-			entity.Owner = param.Owner;
-			entity.Note = param.Note;
-			entity.Status = param.Status;
+			entity = ConvertSpecific(param,entity);
 
 			return entity;
 		}
 	}
->>>>>>> Stashed changes
 }

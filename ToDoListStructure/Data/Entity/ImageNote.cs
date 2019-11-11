@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToDoListStructure.Entities.Notes
+namespace ToDoListStructure.Data.Entity
 {
-    class ListNoteItem : NamedPersistent
+    class ImageNote:Note
     {
-        public bool IsChecked { get; set; }
+        public string Url { get; set; }
 
         public string Text { get; set; }
     }

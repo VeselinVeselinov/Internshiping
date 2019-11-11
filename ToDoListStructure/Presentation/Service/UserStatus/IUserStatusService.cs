@@ -1,36 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.UserStatus;
+using ToDoListStructure.Data.Common;
 
 namespace ToDoListStructure.Presentation.Service.UserStatus
 {
     interface IUserStatusService
     {
-<<<<<<< Updated upstream
-=======
-        Response FindByPK(long id);
+		Response FindByPK(long id);
 
-        Response ListAll();
+		Response ListAll();
 
 		Response FindByCode(string code);
 
 		Response FindByName(string name);
 
-        Response Create(UserStatusParam param);
+		Response FindByAttribute(string att, string value);
 
-        Response Create(List<UserStatusParam> param);
+		Response Create(UserStatusParam param);
 
-        Response Update(long id, UserStatusParam param);
+		Response Create(List<UserStatusParam> param);
 
-        Response Update(List<UserStatusParam> param);
+		Response Update(long id, UserStatusParam param);
 
-        Response DeleteByID(long id);
+		Response Update(List<UserStatusParam> param);
 
-        Response Delte(List<long> idList);
+		Response DeleteByID(long id);
 
-        void ValidateParameters(UserStatusParam param);
+		Response Delte(List<long> idList);
 
-        void ValidateParameters(List<UserStatusParam> param);
->>>>>>> Stashed changes
-    }
+		void ValidateParameters(UserStatusParam param);
+
+		void ValidateParameters(List<UserStatusParam> param);
+	}
 }

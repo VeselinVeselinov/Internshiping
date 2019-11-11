@@ -1,36 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.AlertStatus;
+using ToDoListStructure.Data.Common;
 
 namespace ToDoListStructure.Presentation.Service.AlertStatus
 {
     interface IAlertStatusService
     {
-<<<<<<< Updated upstream
-=======
-        Response FindByPK(long id);
+		Response FindByPK(long id);
 
-        Response ListAll();
+		Response ListAll();
 
-        Response FindByCode(string code);
+		Response FindByCode(string code);
 
-        Response FindByName(string name);
+		Response FindByName(string name);
 
-        Response Create(AlertStatusParam param);
+		Response FindByAttribute(string att, string value);
 
-        Response Create(List<AlertStatusParam> param);
+		Response Create(AlertStatusParam param);
 
-        Response Update(long id, AlertStatusParam param);
+		Response Create(List<AlertStatusParam> param);
 
-        Response Update(List<AlertStatusParam> param);
+		Response Update(long id, AlertStatusParam param);
 
-        Response DeleteByID(long id);
+		Response Update(List<AlertStatusParam> param);
 
-        Response Delte(List<long> idList);
+		Response DeleteByID(long id);
 
-        void ValidateParameters(AlertStatusParam param);
+		Response Delte(List<long> idList);
 
-        void ValidateParameters(List<AlertStatusParam> param);
->>>>>>> Stashed changes
-    }
+		void ValidateParameters(AlertStatusParam param);
+
+		void ValidateParameters(List<AlertStatusParam> param);
+	}
 }

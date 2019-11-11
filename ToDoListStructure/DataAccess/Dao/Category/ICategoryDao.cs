@@ -6,22 +6,20 @@ namespace ToDoListStructure.DataAccess.Dao.Category
 {
     interface ICategoryDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.Category Save(ToDoListStructure.Entities.Category entity);
-        List<ToDoListStructure.Entities.Category> Save(List<ToDoListStructure.Entities.Category> entity);
+		ToDoListStructure.Data.Entity.Category Save(ToDoListStructure.Data.Entity.Category entity);
+		List<ToDoListStructure.Data.Entity.Category> Save(List<ToDoListStructure.Data.Entity.Category> entity);
 
-        ToDoListStructure.Entities.Category Update(ToDoListStructure.Entities.Category entity);
-        List<ToDoListStructure.Entities.Category> Update(List<ToDoListStructure.Entities.Category> entity);
+		ToDoListStructure.Data.Entity.Category Update(ToDoListStructure.Data.Entity.Category entity);
+		List<ToDoListStructure.Data.Entity.Category> Update(List<ToDoListStructure.Data.Entity.Category> entity);
 
-        void Delete(long id);
-        void Delete(ToDoListStructure.Entities.Category entity);
-        void Delete(List<long> ids);
+		void Delete(long id);
+		void Delete(ToDoListStructure.Data.Entity.Category entity);
+		void Delete(List<long> ids);
 
-        ToDoListStructure.Entities.Category Find(long id);
-        List<ToDoListStructure.Entities.Category> Find();
-        Entities.Category FindByCode(string code);
-        List<Entities.Category> FindByName(string name);
->>>>>>> Stashed changes
-    }
+		ToDoListStructure.Data.Entity.Category Find(long id);
+		List<ToDoListStructure.Data.Entity.Category> Find();
+		Data.Entity.Category FindByCode(string code);
+		List<Data.Entity.Category> FindByName(string name);
+		List<Data.Entity.Category> FindByAttribute(string att, string value);
+	}
 }

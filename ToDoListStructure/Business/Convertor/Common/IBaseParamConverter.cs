@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ToDoListStructure.Business.Convertor.Common
 {
-	interface IBaseParamConverter<TIn,TOut>
+	interface IBaseParamConverter<TParam,TEntity>
 	{
-		TOut ConvertStandart(TIn param,TOut entity);
+		TEntity ConvertStandart(TParam param, TEntity entity);
 
-		TOut ConvertSpecific(TIn param, TOut entity);
+		TEntity ConvertSpecific(TParam param, TEntity entity);
 	}
 }

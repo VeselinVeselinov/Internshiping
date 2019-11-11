@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
 
 namespace ToDoListStructure.Business.Convertor.AlertStatus
 {
-    interface IAlertStatusParamConverter
+    interface IAlertStatusParamConverter:IBaseParamConverter<AlertStatusParam,Data.Entity.AlertStatus>
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.AlertStatus Convert(AlertStatusParam param);
-
-        Entities.AlertStatus Convert(AlertStatusParam param, Entities.AlertStatus oldEntity);
->>>>>>> Stashed changes
+        ToDoListStructure.Data.Entity.AlertStatus Convert(AlertStatusParam param,Data.Entity.AlertStatus oldEntity);
     }
 }

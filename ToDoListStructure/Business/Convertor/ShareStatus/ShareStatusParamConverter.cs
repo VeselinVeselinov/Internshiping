@@ -1,31 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDoListStructure.Business.Convertor.Common;
+using ToDoListStructure.DataAccess.Dao.ShareStatus;
+using ToDoListStructure.Data.Entity;
 
 namespace ToDoListStructure.Business.Convertor.ShareStatus
 {
-    class ShareStatusParamConverter:IShareStatusParamConverter
+    class ShareStatusParamConverter:BaseParamConverter<ShareStatusParam,Data.Entity.ShareStatus>,IShareStatusParamConverter
     {
-<<<<<<< Updated upstream
-    }
-=======
-		public IShareStatusDao Dao = new ShareStatusDao();
-
-        public Entities.ShareStatus Convert(ShareStatusParam param)
-        {
-			Entities.ShareStatus entity = new Entities.ShareStatus()
-			{
-				Id = param.Id,
-				Code = param.Code,
-				Name = param.Name,
-				Description = param.Description,
-			};
-			return entity;
+		public override Data.Entity.ShareStatus ConvertSpecific(ShareStatusParam param, Data.Entity.ShareStatus entity)
+		{
+			throw new NotImplementedException();
 		}
 
-		public Entities.ShareStatus Convert(ShareStatusParam param, Entities.ShareStatus oldEntity)
-		{
-			Entities.ShareStatus entity = null;
+		public Data.Entity.ShareStatus Convert(ShareStatusParam param, Data.Entity.ShareStatus oldEntity)
+        {
+			Data.Entity.ShareStatus entity = null;
 
 			if (oldEntity != null)
 			{
@@ -33,7 +24,11 @@ namespace ToDoListStructure.Business.Convertor.ShareStatus
 			}
 			else
 			{
-				entity = new Entities.ShareStatus();
+				entity = new Data.Entity.ShareStatus()
+				{
+					Id=param.Id,
+					Code=param.Code
+				};
 			}
 
 			entity.Name = param.Name;
@@ -42,5 +37,4 @@ namespace ToDoListStructure.Business.Convertor.ShareStatus
 			return entity;
 		}
 	}
->>>>>>> Stashed changes
 }

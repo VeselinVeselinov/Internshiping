@@ -6,22 +6,17 @@ namespace ToDoListStructure.DataAccess.Dao.ImageNote
 {
     interface IImageNoteDao
     {
-<<<<<<< Updated upstream
-=======
-        ToDoListStructure.Entities.ImageNote Save(ToDoListStructure.Entities.ImageNote entity);
-        List<ToDoListStructure.Entities.ImageNote> Save(List<ToDoListStructure.Entities.ImageNote> entity);
+        ToDoListStructure.Data.Entity.ImageNote Save(ToDoListStructure.Data.Entity.ImageNote entity);
+        List<ToDoListStructure.Data.Entity.ImageNote> Save(List<ToDoListStructure.Data.Entity.ImageNote> entity);
 
-        ToDoListStructure.Entities.ImageNote Update(ToDoListStructure.Entities.ImageNote entity);
-        List<ToDoListStructure.Entities.ImageNote> Update(List<ToDoListStructure.Entities.ImageNote> entity);
+        ToDoListStructure.Data.Entity.ImageNote Update(ToDoListStructure.Data.Entity.ImageNote entity);
+        List<ToDoListStructure.Data.Entity.ImageNote> Update(List<ToDoListStructure.Data.Entity.ImageNote> entity);
 
         void Delete(long id);
-        void Delete(ToDoListStructure.Entities.ImageNote entity);
-        void Delete(List<long> ids);
+        void Delete(ToDoListStructure.Data.Entity.ImageNote entity);
+        void Delete(List<ToDoListStructure.Data.Entity.ImageNote> entity);
 
-        ToDoListStructure.Entities.ImageNote Find(long id);
-        List<ToDoListStructure.Entities.ImageNote> Find();
-        Entities.ImageNote FindByCode(string code);
-        List<Entities.ImageNote> FindByName(string name);
->>>>>>> Stashed changes
+        ToDoListStructure.Data.Entity.ImageNote Find(long id);
+        List<ToDoListStructure.Data.Entity.ImageNote> Find();
     }
 }
